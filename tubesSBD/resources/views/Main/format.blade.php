@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="assets/css/templatemo-digimedia-v1.css">
     <link rel="stylesheet" href="assets/css/animated.css">
     <link rel="stylesheet" href="assets/css/owl.css">
+    @yield('formstyle')
 </head>
 
 <body>
@@ -35,6 +36,7 @@
         </div>
     </div>
     <!-- ***** Preloader End ***** -->
+    @yield('content')
 
     <footer>
         <div class="container">
@@ -56,6 +58,7 @@
     <script src="assets/js/animation.js"></script>
     <script src="assets/js/imagesloaded.js"></script>
     <script src="assets/js/custom.js"></script>
+    @yield('formscript')
 </body>
 
 </html>
