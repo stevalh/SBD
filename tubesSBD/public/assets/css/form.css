@@ -14,12 +14,13 @@ h2 {
 	text-align: center;
 }
 
-p {
+.overlay-text {
 	font-size: 14px;
-	font-weight: 100;
+	font-weight: 500;
 	line-height: 20px;
 	letter-spacing: 0.5px;
 	margin: 20px 0 30px;
+    color: #ffffff;
 }
 
 span {

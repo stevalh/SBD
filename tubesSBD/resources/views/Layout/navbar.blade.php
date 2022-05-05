@@ -5,7 +5,7 @@
         <div class="col-12">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
-            <a href="index.html" class="logo">
+            <a href="/" class="logo">
               <img src="assets/images/logo-v1.png" alt="">
             </a>
             <!-- ***** Logo End ***** -->

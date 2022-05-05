@@ -216,7 +216,7 @@ body {
   border-radius: 23px;
   font-weight: 500 !important;
   letter-spacing: 0.3px !important;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .border-first-button a:hover {

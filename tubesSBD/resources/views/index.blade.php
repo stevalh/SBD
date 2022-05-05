@@ -1,15 +1,10 @@
-
-    {{-- <link rel="stylesheet" href="assets/css/form.css"> --}}
 @extends('Main.format')
 
 @section('formstyle')
 <link rel="stylesheet" href="assets/css/form.css">
-
 @endsection
 
-
 @section('formscript')
-
 <script src="assets/js/form.js"></script>
 @endsection
 
@@ -23,7 +18,7 @@
                     <h4>Join over 90% of people in Singapore</h4>
                     <h4>In stopping the spread of COVID-19 community-driven contact tracing</h4>
                     <div class="first-button scroll-to-section">
-                        <a href="#form_">Join Us</a>
+                        <a href="#place">Join Us</a>
                     </div>
                 </div>
             </div>
@@ -33,11 +28,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3"></div>
-            <div id='form_' class="col-lg-6">
+            <div class="col-lg-6">
                 @include('Layout.forms')
             </div>
             <div class="col-lg-3"></div>
         </div>
     </div>
-
 @endsection
