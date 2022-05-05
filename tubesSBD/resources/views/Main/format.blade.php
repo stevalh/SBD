@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="assets/css/templatemo-digimedia-v1.css">
     <link rel="stylesheet" href="assets/css/animated.css">
     <link rel="stylesheet" href="assets/css/owl.css">
+    @yield('formstyle')
+    
 
   </head>
 
@@ -41,13 +43,9 @@
 
 
 
-  <!-- ***** Header Area Start ***** -->
-  @include('Layout.navbar')
-
-  <!-- ***** Header Area End ***** -->
 
   @yield('content')
-
+  @yield('forms')
   <footer>
     <div class="container">
       <div class="row">
@@ -67,6 +65,7 @@
   <script src="assets/js/animation.js"></script>
   <script src="assets/js/imagesloaded.js"></script>
   <script src="assets/js/custom.js"></script>
+  @yield('formScript')
 
 </body>
 </html>

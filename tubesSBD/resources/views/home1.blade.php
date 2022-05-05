@@ -1,7 +1,7 @@
 @extends('Main.format')
 
 @section('content')
-
+@include('Layout.navbar')
 <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
   <div class="container">
     <div class="row">
