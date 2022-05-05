@@ -16,12 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
 Route::get('/h1', function () {
     return view('home1');
-});
-Route::get('/h2', function () {
-    return view('home2');
-});
-Route::get('/h3', function () {
-    return view('home3');
 });
