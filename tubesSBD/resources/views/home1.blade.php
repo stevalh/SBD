@@ -1,9 +1,6 @@
-  
 @extends('Main.format')
 
-
 @section('content')
-    
 
 <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
   <div class="container">
@@ -110,7 +107,7 @@
                     </div>
                   </div>
                 </div>
-              </div> 
+              </div>
             </div>
           </div>
         </div>
@@ -142,31 +139,31 @@
                     </div>
                   </div>
                   <div>
-                    <div class="thumb">                 
+                    <div class="thumb">
                       <span class="icon"><img src="assets/images/service-icon-02.png" alt=""></span>
                       Food &amp; Life
                     </div>
                   </div>
                   <div>
-                    <div class="thumb">                 
+                    <div class="thumb">
                       <span class="icon"><img src="assets/images/service-icon-03.png" alt=""></span>
                       Cars
                     </div>
                   </div>
                   <div>
-                    <div class="thumb">                 
+                    <div class="thumb">
                       <span class="icon"><img src="assets/images/service-icon-04.png" alt=""></span>
                       Shopping
                     </div>
                   </div>
                   <div class="last-thumb">
-                    <div class="thumb">                 
+                    <div class="thumb">
                       <span class="icon"><img src="assets/images/service-icon-01.png" alt=""></span>
                       Traveling
                     </div>
                   </div>
                 </div>
-              </div> 
+              </div>
               <div class="col-lg-12">
                 <ul class="nacc">
                   <li class="active">
@@ -285,7 +282,7 @@
                     </div>
                   </li>
                 </ul>
-              </div>          
+              </div>
             </div>
           </div>
         </div>
@@ -293,7 +290,6 @@
     </div>
   </div>
 </div>
-
 
 <div id="free-quote" class="free-quote">
   <div class="container">
@@ -330,7 +326,6 @@
   </div>
 </div>
 
-
 <div id="portfolio" class="our-portfolio section">
   <div class="container">
     <div class="row">
@@ -358,7 +353,7 @@
                 <span>Marketing</span>
               </div>
             </div>
-            </a>  
+            </a>
           </div>
           <div class="item">
             <a href="#">
@@ -371,7 +366,7 @@
                 <span>Marketing</span>
               </div>
             </div>
-            </a>  
+            </a>
           </div>
           <div class="item">
             <a href="#">
@@ -384,7 +379,7 @@
                 <span>Marketing</span>
               </div>
             </div>
-            </a>  
+            </a>
           </div>
           <div class="item">
             <a href="#">
@@ -397,7 +392,7 @@
                 <span>Marketing</span>
               </div>
             </div>
-            </a>  
+            </a>
           </div>
           <div class="item">
             <a href="#">
@@ -410,7 +405,7 @@
                 <span>Marketing</span>
               </div>
             </div>
-            </a>  
+            </a>
           </div>
         </div>
       </div>
@@ -491,7 +486,7 @@
       </div>
     </div>
   </div>
-</div>  
+</div>
 
 <div id="contact" class="contact-us section">
   <div class="container">
@@ -556,7 +551,7 @@
                   </div>
                   <div class="col-lg-6">
                     <fieldset>
-                      <textarea name="message" type="text" class="form-control" id="message" placeholder="Message" required=""></textarea>  
+                      <textarea name="message" type="text" class="form-control" id="message" placeholder="Message" required=""></textarea>
                     </fieldset>
                   </div>
                   <div class="col-lg-12">
@@ -575,6 +570,3 @@
 </div>
 
 @endsection
-  
-
-  
