@@ -269,15 +269,16 @@ intro
 }
 
 .intro-banner h1 {
+  color: #2B2C3E;
   font-size: 36px;
   font-weight: 600;
-  text-transform: uppercase;
   margin-bottom: 30px;
   position: relative;
   z-index: 2;
 }
 
 .intro-banner h4 {
+    color: #898A9F;
   font-size: 20px;
   text-transform: capitalize;
   font-weight: 400;
@@ -289,8 +290,8 @@ intro
 .intro-banner a {
   display: inline-block !important;
   padding: 10px 20px !important;
-  color: #fa65b1 !important;
-  border: 1px solid #fa65b1 !important;
+  color: #c94c4c !important;
+  border: 1px solid #c94c4c !important;
   border-radius: 23px;
   font-weight: 500 !important;
   letter-spacing: 0.3px !important;
@@ -300,7 +301,7 @@ intro
 }
 
 .intro-banner a:hover {
-  background-color: #fa65b1;
+  background-color: #c94c4c;
   color: #fff !important;
 }
 

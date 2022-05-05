@@ -45,10 +45,11 @@
       <div class="row">
         <div class="col-lg-12">
           <img src="assets/images/logo-v1.png" alt="">
-          <h1>DigiMedia HTML5 Template</h1>
-          <h4>Please choose one of the three variations below.</h4>
+          <h1>TraceTogether, safer together</h1>
+          <h4>Join over 90% of people in Singapore</h4>
+          <h4>In stopping the spread of COVID-19 community-driven contact tracing</h4>
           <div class="first-button scroll-to-section">
-            <a href="#demos">Choose Demo</a>
+            <a href="#demos">Join Us</a>
           </div>
         </div>
       </div>
@@ -86,13 +87,12 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright © 2022 DigiMedia Co., Ltd. All Rights Reserved. 
+          <p>Copyright © 2022 Kelompok 2 Sistem Basis Data. All Rights Reserved.
           <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a></p>
         </div>
       </div>
     </div>
   </footer>
-
 
   <!-- Scripts -->
   <script src="vendor/jquery/jquery.min.js"></script>
