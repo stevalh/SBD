@@ -9,9 +9,8 @@
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <span>or use your email for registration</span>
-            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Full Name" />
             <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
             <button>Sign Up</button>
         </form>
     </div>
@@ -26,8 +25,6 @@
             </div>
             <span>or use your account</span>
             <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <a href="#">Forgot your password?</a>
             <button>Sign In</button>
         </form>
     </div>

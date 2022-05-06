@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id('user_id')->primary();
-            $table->foreignId('Full_Name')->unique();
+            $table->string('Full_Name');
             $table->string('email')->unique();
+            $table->foreignId('NIK');
             $table->unsignedInteger('OTP');
             $table->string('level')->default('member');
             $table->foreignId('test_id')->nullable();
