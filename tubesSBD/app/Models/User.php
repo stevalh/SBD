@@ -13,53 +13,34 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
 
-    public function alls()
-    {
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'Full_Name',
+        'email',
         
-    }
+    ];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // /**
-    //  * The attributes that are mass assignable.
-    //  *
-    //  * @var array<int, string>
-    //  */
-    // protected $fillable = [
-    //     'Full_Name',
-    //     'email',
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+      * @var array<int, string>
+     */
+    protected $hidden = [
+        'password',
         
-    // ];
+    ];
 
-    // /**
-    //  * The attributes that should be hidden for serialization.
-    //  *
-    //   * @var array<int, string>
-    //  */
-    // protected $hidden = [
-    //     'password',
-        
-    // ];
-
-    // /**
-    //  * The attributes that should be cast.
-    //  *
-    //  * @var array<string, string>
-    //  */
-    // protected $casts = [
-    //     'email_verified_at' => 'datetime',
-    // ];
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 }

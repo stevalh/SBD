@@ -17,11 +17,11 @@ return new class extends Migration
             $table->id('user_id')->primary();
             $table->string('Full_Name');
             $table->string('email')->unique();
-            $table->foreignId('NIK');
-            $table->unsignedInteger('OTP');
+            $table->unsignedBigInteger('NIK')->nullable();
+            $table->unsignedInteger('OTP')->nullable();
             $table->string('level')->default('member');
-            $table->foreignId('test_id')->nullable();
-            $table->foreignId('vaccine_id')->nullable();
+            $table->unsignedBigInteger('test_id')->nullable();
+            $table->unsignedBigInteger('vaccine_id')->nullable();
         
         });
     }
