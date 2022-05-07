@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
+use App\Http\Controllers\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +21,6 @@ Route::get('/', function () {
 Route::get('/h1', function () {
     return view('home1');
 });
+
+
+Route::post('/register',[RegisterController::class,'store']);
