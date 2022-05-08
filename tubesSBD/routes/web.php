@@ -22,5 +22,4 @@ Route::get('/h1', function () {
     return view('home1');
 });
 
-
 Route::post('/register',[RegisterController::class,'store']);
