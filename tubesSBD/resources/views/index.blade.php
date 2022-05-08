@@ -1,12 +1,5 @@
 @extends('Main.format')
 
-@section('formstyle')
-<link rel="stylesheet" href="assets/css/form.css">
-@endsection
-
-@section('formscript')
-<script src="assets/js/form.js"></script>
-@endsection
 
 @section('content')
     <div class="intro-banner">
@@ -35,5 +28,8 @@
         </div>
     </div>
 
+    <script>
+        
+    </script>
       
 @endsection
