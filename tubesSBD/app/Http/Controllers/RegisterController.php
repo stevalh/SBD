@@ -17,10 +17,9 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'=> 'required|alpha',
+            'name'=> 'required|regex:/^[a-zA-Z]+$/u',
             'email'=>'required|email|unique:users'
         ]);
-        #Note: Make An Error Message (Pending)
-        dd('Registration Success');
+     
     }
 }

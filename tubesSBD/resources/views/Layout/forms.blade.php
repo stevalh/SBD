@@ -4,28 +4,33 @@
         <form action="/register" method="POST">
             @csrf
             <h1>Create Account</h1>
-            <div class="social-place">
+            {{-- <div class="social-place">
                 <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <span>or use your email for registration</span>
-            <input type="text"name='name' placeholder="Full Name" />
-            <input type="email"name='email' placeholder="Email" />
+            </div> --}}
+            {{-- <span>or use your email for registration</span> --}}
+            <input  type="text"name='name' class ="@error('name') is-invalid @enderror" placeholder="Full Name" />
+            @error('name')
+            <div  class="invalid-feedback">
+               {{ $message }}
+              </div>
+            @enderror
+            <input type="email"name='email' class ="is-invalid" placeholder="Email" />
             <button>Sign Up</button>
         </form>
     </div>
 
     <div class="form-place sign-in-place">
-        <form action="#">
+        <form action="/login">
             <h1>Sign in</h1>
-            <div class="social-place">
+            {{-- <div class="social-place">
                 <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <span>or use your account</span>
-            <input type="email" placeholder="Email" />
+            </div> --}}
+            {{-- <span>or use your account</span> --}}
+            <input type="email"class="is-invalid" placeholder="Email" />
             <button>Sign In</button>
         </form>
     </div>
@@ -45,3 +50,6 @@
         </div>
     </div>
 </div>
+
+
+ 
