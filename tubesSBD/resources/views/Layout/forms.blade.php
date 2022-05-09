@@ -1,13 +1,21 @@
 
 <div class="place" id="place">
     <div class="form-place sign-up-place">
-        <form id="register" action="/register" method="POST">
+        <form  action="/register" method="POST">
             @csrf
             <h1>Create Account</h1>
-            <input  type="text"  class ="fname form-control" placeholder="Full Name" required/>
-        
-            <input type="email"  class ="email form-control" placeholder="Email" required/>
-
+            <input  type="text" name="fname" onclick="check(name)" class ="fname form-control @error('fname') is-invalid @enderror"  placeholder="Full Name" />
+            @error('fname')
+            <div class="fname-validation invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+            <input type="email" name="email" onclick="check(name)" id="email" class ="fname form-control  @error('email') is-invalid @enderror" placeholder="Email" required />
+            @error('email')
+            <div class="email-validation invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
             
             <button>Sign Up</button>
         </form>
@@ -16,7 +24,7 @@
     <div class="form-place sign-in-place">
         <form action="/login">
             <h1>Sign in</h1>
-            <input type="email"class="is-invalid" placeholder="Email" />
+            <input type="email"class="form-control" placeholder="Email" />
             <button>Sign In</button>
         </form>
     </div>
@@ -38,132 +46,26 @@
     
 </div>
 
-<script>
-    //Untuk Register (Belum Selesai)
-    //1.Mungkin Login dan Register DIpisah
-    //2.Controller Regis blm lengkap
- 
-         $(document).ready(function() {
-             $('#email').blur(function() {
-                 event.preventDefault();
-                 var email = $(this).val();
-                 $.ajax({
-                     type: 'POST',
-                     url: 'user.php?aksi=validasi-email',
-                     data: 'email=' + email,
-                     success: function(data) {
-                         if (data == "invalid") {
-                             setError("#email", "Email is not valid");
-                         } else if (data == "ok") {
-                             setSucces("#email");
-                         } else {
-                             setError("#email", "Email has been used")
-                         }
-                     }
-                 });
-             });
-
-
-             $('#uname').blur(function() {
-                 event.preventDefault();
-                 var uname = $(this).val();
-                 $.ajax({
-                     type: 'POST',
-                     url: 'user.php?aksi=validasi-uname',
-                     data: 'uname=' + uname,
-                     success: function(data) {
-                         if (data == "less") {
-                             setError("#uname", "Username must be at least 5 characters");
-                         } else if (data == "too much") {
-                             setError("#uname", "Username cannot be more than 20 characters")
-                         } else if (data == "ok") {
-                             setSucces("#uname");
-                         } else {
-                             setError("#uname", "username has been used")
-                         }
-                     }
-                 });
-             });
-
-
-
-
-             $('#form-reg').submit(function() {
-
-                 // validasi email
-                 if ($('#email').val().length == 0) {
-                     setError("#email", "Email cannot be blank");
-                     return false;
-                 } else {
-                     setSucces("#email");
-                 }
-
-
-                 // validasi username
-                 if ($('#uname').val().length < 5) {
-                     setError("#uname", "Username must be at least 5 characters");
-                     return false;
-                 } else {
-                     setSucces("#uname");
-                 }
-
-                 if ($('#uname').val().length >= 20) {
-                     setError("#uname", "Username cannot be more than 20 characters");
-                     return false;
-                 } else {
-                     setSucces("#uname");
-                 }
-
-
-                 // validasi nama
-                 if ($('#name').val().length == 0) {
-                     setError("#name", "Name cannot be blank");
-                     return false;
-                 } else {
-                     setSucces("#name");
-                 }
-
-             });
-
-
-
-
-             $('#name').blur(function() {
-                 event.preventDefault();
-                 if ($('#name').val().length == 0) {
-                     setError("#name", "Name cannot be blank");
-                 } else {
-                     setSucces("#name");
-                 }
-             });
-
-
-
-
-             function setError(id, message) {
-                 $(id).removeClass('is-valid');
-                 $(id).addClass('is-invalid');
-                 $(id + '-validation').removeClass('valid-feedback');
-                 $(id + '-validation').addClass('invalid-feedback');
-                 $(id + '-validation').html(message);
-                 return false;
-             }
-
-             function setSucces(id) {
-                 $(id).removeClass('is-invalid');
-                 $(id).addClass('is-valid');
-                 $(id + '-validation').removeClass('invalid-feedback');
-                 $(id + '-validation').html("");
-                 return true;
-             }
-
-
-         });
-
-
-     </script>
+  
    
+<script>
+ jQuery( document ).ready(function() {
+    // event for click on input (also you can use click)
+    //better to change form to .yourFormClass
+    $('form input[type=text]').focus(function(){
+    // get selected input error container
+    $(this).siblings(".invalid-feedback").hide();
+    $(this).removeClass("is-invalid");
+    });
+    $('form input[type=email]').focus(function(){
+    // get selected input error container
+    $(this).siblings(".invalid-feedback").hide();
+    $(this).removeClass("is-invalid");
+    });
+});
 
+
+</script>
 
 
  

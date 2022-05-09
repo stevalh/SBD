@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\FormsRequest;
 
 class RegisterController extends Controller
 {
@@ -14,12 +15,21 @@ class RegisterController extends Controller
     //     ]);
     // }
 
-    public function store(Request $request)
+    public function store(FormsRequest $request)
     {
-        $request->validate([
-            'name'=> 'required|regex:/^[a-zA-Z]+$/u',
-            'email'=>'required|email|unique:users'
-        ]);
-     
+
+
+        $request->validate(
+            [
+                'fname' => 'required|alpha',
+                'email' => 'required|email:rfc,dns|unique:users|email'
+            ],
+            [
+                'fname.required'=>'Name cannot be empty',
+                'fname.alpha'=>'Only alphabet is allowed',
+                'email.email:rfc,dns'=>'Email is Not Valid' ,
+                'email.required'=>"Email cannot be empty"
+            ]
+        );
     }
 }
