@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
-                @include('Layout.new_forms')
+                @include('Layout.login_forms')
             </div>
             <div class="col-lg-3"></div>
         </div>

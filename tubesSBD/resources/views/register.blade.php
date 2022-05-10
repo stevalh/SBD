@@ -1,7 +1,7 @@
 @extends('Main.format')
 
 @section('content')
-<div class="container mt-5">
+<div class="container">
     <div class="row">
         <div class="col-lg-6">
             <div class="login100-pic js-tilt" data-tilt>
