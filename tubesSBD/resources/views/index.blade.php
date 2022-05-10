@@ -10,7 +10,7 @@
                     <h4>Join over 90% of people in Singapore</h4>
                     <h4>In stopping the spread of COVID-19 community-driven contact tracing</h4>
                     <div class="first-button scroll-to-section">
-                        <a href="#place">Join Us</a>
+                        <a href="/signup">Join Us</a>
                     </div>
                 </div>
             </div>
