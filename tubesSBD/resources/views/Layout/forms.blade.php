@@ -1,16 +1,22 @@
 
+@if(session()->has('success'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+@endif
 <div class="place" id="place">
     <div class="form-place sign-up-place">
         <form  action="/register" method="POST">
             @csrf
             <h1>Create Account</h1>
-            <input  type="text" name="fname" onclick="check(name)" class ="fname form-control @error('fname') is-invalid @enderror"  placeholder="Full Name" />
+            <input  type="text" name="fname" value="{{ old('fname') }}" onclick="check(name)" class ="fname form-control @error('fname') is-invalid @enderror"  placeholder="Full Name" required/>
             @error('fname')
             <div class="fname-validation invalid-feedback">
                 {{ $message }}
             </div>
             @enderror
-            <input type="email" name="email" onclick="check(name)" id="email" class ="fname form-control  @error('email') is-invalid @enderror" placeholder="Email" required />
+            <input type="email" name="email" value="{{ old('email') }}" onclick="check(name)" id="email" class ="fname form-control  @error('email') is-invalid @enderror" placeholder="Email" required />
             @error('email')
             <div class="email-validation invalid-feedback">
                 {{ $message }}

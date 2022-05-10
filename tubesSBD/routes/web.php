@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\RegisterController;
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::get('/h1', function () {
 });
 
 Route::post('/register',[RegisterController::class,'store']);
+
+

@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-use App\Http\Requests\FormsRequest;
+use App\Models\User;
 
 class RegisterController extends Controller
 {
@@ -15,21 +14,29 @@ class RegisterController extends Controller
     //     ]);
     // }
 
-    public function store(FormsRequest $request)
+    public function store(Request $request)
     {
 
 
-        $request->validate(
+      $validatedData = $request->validate(
             [
+                
                 'fname' => 'required|alpha',
                 'email' => 'required|email:rfc,dns|unique:users|email'
             ],
             [
                 'fname.required'=>'Name cannot be empty',
                 'fname.alpha'=>'Only alphabet is allowed',
-                'email.email:rfc,dns'=>'Email is Not Valid' ,
-                'email.required'=>"Email cannot be empty"
+                'email.required'=>"Email cannot be empty",
+                'email.email'=>'Email is Not Valid',
+                'email.unique'=>"This email address is registered"
             ]
         );
+  
+      
+        User::create($validatedData);
+        $request->session()->flash('success','Registration successfull ! Please Login');
+        return redirect('/');
+       
     }
 }
