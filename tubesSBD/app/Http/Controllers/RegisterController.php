@@ -35,8 +35,10 @@ class RegisterController extends Controller
   
       
         User::create($validatedData);
-        $request->session()->flash('success','Registration successfull ! Please Login');
-        return redirect('/');
+        
+        return redirect()->back()->with('success', 'Registration successfull ! Please Login'); 
+        // $request->session()->flash('success','Registration successfull ! Please Login');
+        // return redirect('/');
        
     }
 }
