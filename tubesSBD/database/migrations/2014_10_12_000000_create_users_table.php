@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('NIK')->nullable();
             $table->unsignedInteger('OTP')->nullable();
             $table->string('level')->default('member');
+            $table->string('token')->nullable();
             
             // $table->unsignedBigInteger('test_id')->nullable();
             // $table->unsignedBigInteger('vaccine_id')->nullable();
