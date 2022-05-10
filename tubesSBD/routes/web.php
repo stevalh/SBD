@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\MailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,4 +27,7 @@ Route::get('/h1', function () {
 
 Route::post('/register',[RegisterController::class,'store']);
 
+Route::post('/login',[LoginController::class,'authenticate']);
 
+Route::view('/send','Auth.send-email')->name('sendtoken');
+Route::post('/send',[MailController::class,'send'])->name('send.email');
