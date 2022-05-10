@@ -1,11 +1,10 @@
-
 @if(session()->has('success'))
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     {{ session('success') }}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 @endif
-<div class="place" id="place">
+<div class="place mt-5" id="place">
     <div class="form-place sign-up-place">
         <form  action="/register" method="POST">
             @csrf
@@ -22,7 +21,7 @@
                 {{ $message }}
             </div>
             @enderror
-            
+
             <button>Sign Up</button>
         </form>
     </div>
@@ -49,11 +48,11 @@
             </div>
         </div>
     </div>
-    
+
 </div>
 
-  
-   
+
+
 <script>
  jQuery( document ).ready(function() {
     // event for click on input (also you can use click)
@@ -74,4 +73,3 @@
 </script>
 
 
- 

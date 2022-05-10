@@ -1,6 +1,5 @@
 @extends('Main.format')
 
-
 @section('content')
     <div class="intro-banner">
         <div class="container">
@@ -22,6 +21,16 @@
         <div class="row">
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
+                @include('Layout.new_forms')
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
                 @include('Layout.forms')
             </div>
             <div class="col-lg-3"></div>
@@ -29,7 +38,7 @@
     </div>
 
     <script>
-        
+
     </script>
-      
+
 @endsection
