@@ -25,6 +25,10 @@ Route::get('/h1', function () {
     return view('home1');
 });
 
+Route::get('/signup', function () {
+    return view('register');
+});
+
 Route::post('/register',[RegisterController::class,'store']);
 
 Route::post('/login',[LoginController::class,'authenticate']);
