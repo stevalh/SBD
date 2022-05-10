@@ -13,5 +13,4 @@
     <!-- ***** Preloader End ***** -->
     @yield('content')
 
-    
 @include('Main.footer')

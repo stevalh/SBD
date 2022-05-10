@@ -1,10 +1,10 @@
-
 @if(session()->has('success'))
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     {{ session('success') }}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 @endif
+<<<<<<< HEAD
 @if(session()->has('loginError'))
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
     {{ session('loginError') }}
@@ -12,6 +12,9 @@
   </div>
 @endif
 <div class="place" id="place">
+=======
+<div class="place mt-5" id="place">
+>>>>>>> e01697c7a64bd30531db590860a134a38e75a364
     <div class="form-place sign-up-place">
         <form  action="/register" method="POST" class="regis">
             @csrf
@@ -28,7 +31,7 @@
                 {{ $message }}
             </div>
             @enderror
-            
+
             <button>Sign Up</button>
         </form>
     </div>
@@ -61,11 +64,11 @@
             </div>
         </div>
     </div>
-    
+
 </div>
 
-  
-   
+
+
 <script>
  jQuery(document).ready(function() {
     // event for click on input (also you can use click)
@@ -96,4 +99,3 @@
 </script>
 
 
- 
