@@ -29,5 +29,5 @@ Route::post('/register',[RegisterController::class,'store']);
 
 Route::post('/login',[LoginController::class,'authenticate']);
 
-Route::view('/send','Auth.send-email')->name('sendtoken');
+Route::view('/userVerify','Auth.send-email')->name('sendtoken');
 Route::post('/send',[MailController::class,'send'])->name('send.email');

@@ -15,6 +15,11 @@ class MailController extends Controller
             'email.required'=>'Email cannot be empty',
             'email.email'=>'Email is not valid'
         ]);
+        if($this->isOnline)
+        return "Connected";
+        else
+        return "No connection";
+
     }
 
     public function isOnline($site ="https://google.com/")
