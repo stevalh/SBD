@@ -21,6 +21,7 @@ return new class extends Migration
             $table->unsignedInteger('OTP')->nullable();
             $table->string('level')->default('member');
             $table->string('token')->nullable();
+            $table->integer('status')->default(0);
             
             // $table->unsignedBigInteger('test_id')->nullable();
             // $table->unsignedBigInteger('vaccine_id')->nullable();

@@ -36,7 +36,7 @@ class MailController extends Controller
                 'body'=>"<h2>User Token</h2>
                 <h5> Login with the given link below</h5>
                 <br><br>
-                <a href='http://localhost/login?vkey=$token'>Login Now</a>',"
+                <a href='http://localhost/login?token=$token'>Login Now</a>',"
             ];
             \Mail::send('Auth.email-template',$mail_data,function($message) use($mail_data)
             {
