@@ -36,7 +36,7 @@
         <form action="{{ route('send.email') }}" method="POST" class="login">
             @csrf
             <h1>Sign in</h1>
-            <input type="email" name="email" value="{{ old('email') }}"  id="email" class ="fname form-control  @error('email') is-invalid @enderror" placeholder="Email" required />
+            <input type="email" name="email" value="{{ old('email') }}"  id="email" class ="email form-control  @error('email') is-invalid @enderror" placeholder="Email" required />
             @error('email')
             <div class="email-validation invalid-feedback">
                 {{ $message }}

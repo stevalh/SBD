@@ -9,12 +9,18 @@
             </div>
         </div>
         <div class="col-lg-6">
-            <form class="login100-form validate-form">
+            <form class="regis login100-form validate-form" action="/register" method="POST">
+                @csrf
                 <span class="login100-form-title">
                     Sign Up
                 </span>
                 <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                    <input class="input100" type="text" name="email" placeholder="Full Name">
+                    <input class="fname input100  @error('fname') is-invalid @enderror" type="text"  value="{{ old('fname') }}" name="fname" placeholder="Full Name" required>
+                    @error('fname')
+                    <div class="fname-validation invalid-feedback">
+                        {{ $message }}
+                    </div>
+                    @enderror
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
                         <i class="fa fa-user" aria-hidden="true"></i>
@@ -22,7 +28,12 @@
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                    <input class="input100" type="text" name="email" placeholder="Email">
+                    <input class="email input100  @error('email') is-invalid @enderror" type="email"  value="{{ old('email') }}" name="email" placeholder="Email" required>
+                    @error('email')
+                    <div class="email-validation invalid-feedback">
+                        {{ $message }}
+                    </div>
+                    @enderror
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -46,4 +57,20 @@
         </div>
     </div>
 </div>
+<script>
+jQuery(document).ready(function() {
+    // event for click on input (also you can use click)
+    //better to change form to .yourFormClass
+    $('.regis input[type=text]').focus(function(){
+        // get selected input error container
+        $(this).siblings(".invalid-feedback").hide();
+        $(this).removeClass("is-invalid");
+    });
+    $('.regis input[type=email]').focus(function(){
+        // get selected input error container
+        $(this).siblings(".invalid-feedback").hide();
+        $(this).removeClass("is-invalid");
+    });
+});
+</script>
 @endsection

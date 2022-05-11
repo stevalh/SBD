@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MailController extends Controller
 {
@@ -16,6 +17,12 @@ class MailController extends Controller
             'email.required'=>'Email cannot be empty',
             'email.email'=>'Email is not valid'
         ]);
+        $user=DB::table('users')->where('email', $credentials['email'])->first();
+        if(!$user)
+        {
+            return redirect('/')->back()->with('loginError', 'User Not Found');
+        }
+
         $token=md5(rand());
         DB::table('users')->where('email', $credentials['email'])->update(['token'=>$token]);
         

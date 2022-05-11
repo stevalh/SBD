@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,22 +17,17 @@ use App\Http\Controllers\MailController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/h1', function () {
-    return view('home1');
-});
-
-Route::get('/signup', function () {
-    return view('register');
-});
-
+//Page Controller
+Route::get('/', [PageController::class,'Home']);
+Route::get('/app', [PageController::class,'AppPage']);
+Route::get('/signup', [PageController::class,'RegisterPage']);
+    
 Route::post('/register',[RegisterController::class,'store']);
 
 Route::post('/login',[LoginController::class,'authenticate']);
 
 Route::view('/userVerify','Auth.send-email')->name('sendtoken');
 Route::post('/send',[MailController::class,'send'])->name('send.email');
+
+
+Route::get('/User',[MailController::class,'send']);
