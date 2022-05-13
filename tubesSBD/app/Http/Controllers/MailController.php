@@ -18,9 +18,10 @@ class MailController extends Controller
             'email.email'=>'Email is not valid'
         ]);
         $user=DB::table('users')->where('email', $credentials['email'])->first();
+
         if(!$user)
         {
-            return redirect('/')->back()->with('loginError', 'User Not Found');
+            return redirect('/')->with('loginError', 'User Not Found');
         }
 
         $token=md5(rand());
