@@ -43,7 +43,9 @@ class MailController extends Controller
             {
                 $message->to($mail_data['recipient'])->from($mail_data['fromEmail'])->subject($mail_data['subject']);
             });
-            return "Email Sent";
+            return "Email Sent";// ganti jadi error
+            
+            return redirect('Auth.')->with('email', $request->email); // klo uda buat page error ini dihapus aja
          
         }else
         return redirect()->back()->withInput()->with('error','Check your Connection');
@@ -56,5 +58,10 @@ class MailController extends Controller
         return true;
         else
             return false;
+    }
+
+    public function resend()
+    {
+
     }
 }
