@@ -12,7 +12,7 @@
                             data-wow-delay="1s">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h6>Trace Together</h6>
+                                    <h6>Hi,{{ auth()->user()->NIK }}</h6>
                                     <h2>TraceTogether, safer together</h2>
                                     <p>Join over 90% of people in Singapore in stopping the spread of COVID-19 through
                                         community-driven contact tracing</p>
