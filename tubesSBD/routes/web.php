@@ -19,7 +19,7 @@ use App\Http\Controllers\PageController;
 */
 //Page Controller
 Route::get('/', [PageController::class,'Home'])->middleware('guest');
-Route::get('/app', [PageController::class,'AppPage'])->middleware('auth');
+Route::get('/app', [PageController::class,'AppPage']);
 Route::get('/signup', [PageController::class,'RegisterPage'])->middleware('guest');
     
 Route::post('/register',[RegisterController::class,'store']);
@@ -30,4 +30,11 @@ Route::view('/userVerify','Auth.send-email')->name('sendtoken')->middleware('gue
 Route::post('/send',[MailController::class,'send'])->name('send.email')->middleware('guest');
 
 
+//Log out
+Route::post('/logout',[LoginController::class,'logout']);
+
 // Route::get('/User',[MailController::class,'send']);
+
+
+//ADMIN
+
