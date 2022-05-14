@@ -16,6 +16,12 @@
                         <li class="scroll-to-section">
                             <div class="border-first-button"><a href="#profile">Profile</a></div>
                         </li>
+                        @auth
+                        <form method="POST" action="/logout">
+                            @csrf
+                        <li class="scroll-to-section"><button type="submit">Log Out</button></li>
+                    </form>
+                    @endauth
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>

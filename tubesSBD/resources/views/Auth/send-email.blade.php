@@ -1,8 +1,10 @@
 @include('AuthLayout.header')
 
-<h1>Code have been sent to {{  }}</h1>
+<h1>Token have been sent to {{ session('email') }}</h1>
 
-
-<a href="">Resend Code</a>
-
+<form action="/resend/{{ session('email') }}" method="POST">
+    @csrf
+<h5>if you didn't recieve the code,Click Resend Button</h5>    
+<button type="submit">Resend</button>
+</form>
 @include('AuthLayout.footer')

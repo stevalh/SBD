@@ -12,7 +12,14 @@
                             data-wow-delay="1s">
                             <div class="row">
                                 <div class="col-lg-12">
+                                    @auth
                                     <h6>Hi,{{ auth()->user()->fname }}</h6>
+                                    
+                                    @else
+                                    <h6>Hi</h6>
+
+                                   @endauth
+
                                     <h2>TraceTogether, safer together</h2>
                                     <p>Join over 90% of people in Singapore in stopping the spread of COVID-19 through
                                         community-driven contact tracing</p>

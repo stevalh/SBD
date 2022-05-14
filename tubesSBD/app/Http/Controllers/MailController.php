@@ -26,26 +26,31 @@ class MailController extends Controller
 
         $token=md5(rand());
         DB::table('users')->where('email', $credentials['email'])->update(['token'=>$token]);
+
+        $usertoken= DB::table('users')->where('email', $credentials['email'])->first()->token;
         
         if($this->isOnline())
         {
-
-            $mail_data =[
-                'recipient'=> $request->email,
-                'fromEmail'=>'miminwyz@gmail.com',
-                'subject'=>'User Login',
-                'body'=>"<h2>User Token</h2>
-                <h5> Login with the given link below</h5>
-                <br><br>
-                <a href='http://127.0.0.1:8000/login?token=$token'>Login Now</a>',"
-            ];
-            \Mail::send('Auth.email-template',$mail_data,function($message) use($mail_data)
+            if($usertoken === $token )
             {
-                $message->to($mail_data['recipient'])->from($mail_data['fromEmail'])->subject($mail_data['subject']);
-            });
-            return "Email Sent";// ganti jadi error
-            
-            return redirect('Auth.')->with('email', $request->email); // klo uda buat page error ini dihapus aja
+
+                $mail_data =[
+                    'recipient'=> $request->email,
+                    'fromEmail'=>'miminwyz@gmail.com',
+                    'subject'=>'User Login',
+                    'body'=>"<h2>User Token</h2>
+                    <h5> Login with the given link below</h5>
+                    <br><br>
+                    <a href='http://127.0.0.1:8000/login?token=$token'>Login Now</a>',"
+                ];
+                \Mail::send('Auth.email-template',$mail_data,function($message) use($mail_data)
+                {
+                    $message->to($mail_data['recipient'])->from($mail_data['fromEmail'])->subject($mail_data['subject']);
+                });
+               //return "Email Sent";
+                
+                return redirect('/send-email')->with('email', $request->email); 
+            }
          
         }else
         return redirect()->back()->withInput()->with('error','Check your Connection');
@@ -60,8 +65,50 @@ class MailController extends Controller
             return false;
     }
 
-    public function resend()
+    public function resend($userEmail)
     {
+        $user=DB::table('users')->where('email', $userEmail)->first();
+
+        if(!$user)
+        {
+            return redirect('/')->with('loginError', 'User Not Found');
+        }
+
+        $token=md5(rand());
+        DB::table('users')->where('email', $userEmail)->update(['token'=>$token]);
+        $usertoken= DB::table('users')->where('email', $userEmail)->first()->token;
+        
+        if($this->isOnline())
+        {
+            if($usertoken == $token )
+            {
+                    
+                $mail_data =[
+                    'recipient'=> $userEmail,
+                    'fromEmail'=>'miminwyz@gmail.com',
+                    'subject'=>'User Login',
+                    'body'=>"<h2>User Token</h2>
+                    <h5> Login with the given link below</h5>
+                    <br><br>
+                    <a href='http://127.0.0.1:8000/login?token=$token'>Login Now</a>',"
+                ];
+                \Mail::send('Auth.email-template',$mail_data,function($message) use($mail_data)
+                {
+                    $message->to($mail_data['recipient'])->from($mail_data['fromEmail'])->subject($mail_data['subject']);
+                });
+                // return "Email Sent";// ganti jadi error
+                
+                return redirect('/send-email')->with('email', $userEmail); // klo uda buat page error ini dihapus aja
+            }
+         
+        }else
+        return redirect()->back()->withInput()->with('error','Check your Connection');
 
     }
+
+    public function send_email()
+    {
+        return view('Auth.send-email');
+    }
+   
 }

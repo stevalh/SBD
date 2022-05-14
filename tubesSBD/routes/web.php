@@ -30,6 +30,11 @@ Route::view('/userVerify','Auth.send-email')->name('sendtoken')->middleware('gue
 Route::post('/send',[MailController::class,'send'])->name('send.email')->middleware('guest');
 
 
+
+Route::get('/send-email',[MailController::class,'send_email']);
+Route::post('/resend/{userEmail}',[MailController::class,'resend']);
+
+
 //Log out
 Route::post('/logout',[LoginController::class,'logout']);
 
