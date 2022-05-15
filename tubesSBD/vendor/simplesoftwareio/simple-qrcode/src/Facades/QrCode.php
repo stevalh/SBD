@@ -1,22 +1,21 @@
-<?php namespace SimpleSoftwareIO\QrCode\Facades;
-/**
- * Simple Laravel QrCode Generator
- * A simple wrapper for the popular BaconQrCode made for Laravel.
- *
- * @link http://www.simplesoftware.io
- * @author SimpleSoftware support@simplesoftware.io
- *
- */
+<?php
+
+namespace SimpleSoftwareIO\QrCode\Facades;
 
 use Illuminate\Support\Facades\Facade;
+use SimpleSoftwareIO\QrCode\Generator;
 
-class QrCode extends Facade {
+class QrCode extends Facade
+{
+    /**
+     * Get the registered name of the component.
+     *
+     * @return string
+     */
+    protected static function getFacadeAccessor()
+    {
+        self::clearResolvedInstance(Generator::class);
 
-	/**
-	 * Get the registered name of the component.
-	 *
-	 * @return string
-	 */
-	protected static function getFacadeAccessor() { return 'qrcode'; }
-
+        return Generator::class;
+    }
 }

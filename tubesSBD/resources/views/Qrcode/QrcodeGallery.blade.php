@@ -34,9 +34,9 @@
                 <table class="table">
                     <thead>
                       <tr>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Phone</th>
+                        <th scope="col">Nama </th>
+                        <th scope="col">Address</th>
+                        <th scope="col">City_id</th>
                         <th scope="col">QR code</th>
                       </tr>
                     </thead>

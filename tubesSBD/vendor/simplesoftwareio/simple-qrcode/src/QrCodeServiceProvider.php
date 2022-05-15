@@ -1,46 +1,28 @@
-<?php namespace SimpleSoftwareIO\QrCode;
-/**
- * Simple Laravel QrCode Generator
- * A simple wrapper for the popular BaconQrCode made for Laravel.
- *
- * @link http://www.simplesoftware.io
- * @author SimpleSoftware support@simplesoftware.io
- *
- */
+<?php
 
+namespace SimpleSoftwareIO\QrCode;
 
 use Illuminate\Support\ServiceProvider;
 
-class QrCodeServiceProvider extends ServiceProvider {
-
-	/**
-	 * Indicates if loading of the provider is deferred.
-	 *
-	 * @var bool
-	 */
-	protected $defer = true;
-
-	/**
-	 * Register the service provider.
-	 *
-	 * @return void
-	 */
-	public function register()
-	{
-        $this->app->bindShared('qrcode', function()
-        {
-            return new BaconQrCodeGenerator;
+class QrCodeServiceProvider extends ServiceProvider
+{
+    /**
+     * Register the service provider.
+     */
+    public function register()
+    {
+        $this->app->bind('qrcode', function () {
+            return new Generator();
         });
-	}
+    }
 
-	/**
-	 * Get the services provided by the provider.
-	 *
-	 * @return array
-	 */
-	public function provides()
-	{
-		return array('qrcode');
-	}
-
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return [Generator::class];
+    }
 }

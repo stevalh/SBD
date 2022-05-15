@@ -25,8 +25,8 @@ class QRController extends Controller
     public static function  generate($id)
     {
         $data=Location::findorFail($id);
-        $qr=Qrcode::size(400)->generate($data->id);
-        return view('Qrcode.Generate',compact('qr'));
+        $qrcode=Qrcode::size(400)->generate($data->id);
+        return view('Qrcode.Generate',compact('qrcode'));
 
     }
 
