@@ -14,18 +14,17 @@
                         <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
                         <li class="scroll-to-section"><a href="#services">Services</a></li>
                         <li class="scroll-to-section">
-                            <div class="border-first-button"><a href="#profile">Profile</a></div>
+                            <a href="#profile">Profile</a>
                         </li>
-                        @auth
-                        <form method="POST" action="/logout">
-                            @csrf
-                        <li class="scroll-to-section"><button type="submit">Log Out</button></li>
-                    </form>
-                    @endauth
+                        <li class="scroll-to-section">
+                            @auth
+                                <form method="POST" action="/logout">
+                                    @csrf
+                                    <button>Log Out</button>
+                            </div>
+                            @endauth
+                        </li>
                     </ul>
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
                     <!-- ***** Menu End ***** -->
                 </nav>
             </div>
