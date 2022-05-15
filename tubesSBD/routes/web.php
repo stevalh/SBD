@@ -44,6 +44,9 @@ Route::post('/logout',[LoginController::class,'logout']);
 //QR Code
 
 Route::get('/scan',[QRController::class,'index']);
+//satu route utk input data lokasi
+Route::get('/gallery',[QRController::class,'gallery']);
+ROute::get('/generate/{id}',[QRController::class,'generate'])->name('generate');
 
 
 //ADMIN
