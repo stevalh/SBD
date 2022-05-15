@@ -26,9 +26,7 @@
             padding: 10px;
         }
         .container img{
-            width: 50%;
-            height: 50%;
-
+            width: 350px;
         }
     </style>
 </head>
