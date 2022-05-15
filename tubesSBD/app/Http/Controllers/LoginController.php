@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
@@ -23,7 +24,7 @@ class LoginController extends Controller
             
                 
                 $request->session()->regenerate();
-
+                DB::table('users')->where('token',$token)->update(['token'=>null]);
                 return redirect()->intended('/app');
                 // return redirect('/app')->with('success','You are now logged in');    
             

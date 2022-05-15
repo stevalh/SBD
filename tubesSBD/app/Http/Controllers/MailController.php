@@ -68,7 +68,7 @@ class MailController extends Controller
     public function resend($userEmail)
     {
         $user=DB::table('users')->where('email', $userEmail)->first();
-
+        
         if(!$user)
         {
             return redirect('/')->with('loginError', 'User Not Found');
@@ -99,6 +99,10 @@ class MailController extends Controller
                 // return "Email Sent";// ganti jadi error
                 
                 return redirect('/send-email')->with('email', $userEmail); // klo uda buat page error ini dihapus aja
+            }
+
+            else{// jika token invalid ato tidak sesuai
+                    return "a";
             }
          
         }else
