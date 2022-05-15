@@ -31,11 +31,8 @@ class LoginController extends Controller
 
         }
 
-        return redirect('/');
+        return redirect('/')->with('loginError',"Token Invalid, Please Login Again");
 
-        
-
-       
     }
 
     public function logout(Request $request)

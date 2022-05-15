@@ -5,6 +5,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use phpDocumentor\Reflection\Types\Null_;
 
 class MailController extends Controller
 {
@@ -65,8 +66,12 @@ class MailController extends Controller
             return false;
     }
 
-    public function resend($userEmail)
+    public function resend($userEmail=Null)
     {
+        if($userEmail == Null)
+        {
+            return redirect('/')->with("loginError","Please Login Again");
+        }
         $user=DB::table('users')->where('email', $userEmail)->first();
         
         if(!$user)

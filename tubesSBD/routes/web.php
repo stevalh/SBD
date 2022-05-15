@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\QRController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,14 +32,18 @@ Route::post('/send',[MailController::class,'send'])->name('send.email')->middlew
 
 
 
-Route::get('/send-email',[MailController::class,'send_email']);
-Route::post('/resend/{userEmail}',[MailController::class,'resend']);
+Route::get('/send-email',[MailController::class,'send_email'])->middleware('guest');
+Route::post('/resend/{userEmail}',[MailController::class,'resend'])->middleware('guest');
 
 
 //Log out
 Route::post('/logout',[LoginController::class,'logout']);
 
 // Route::get('/User',[MailController::class,'send']);
+
+//QR Code
+
+Route::get('/scan',[QRController::class,'index']);
 
 
 //ADMIN
