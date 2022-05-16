@@ -11,6 +11,10 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
+                        @if( auth()->user()->level ==  "admin")
+
+                        <li class="scroll-to-section"><a href="#" class="active">Admin</a></li>
+                        @endif
                         <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
                         <li class="scroll-to-section"><a href="#services">Services</a></li>
                         <li class="scroll-to-section">
