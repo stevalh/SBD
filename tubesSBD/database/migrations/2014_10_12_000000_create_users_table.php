@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('level')->default('member');
             $table->string('token')->nullable();
             $table->integer('status')->default(0);
+            $table->timestamps();
             
             // $table->unsignedBigInteger('test_id')->nullable();
             // $table->unsignedBigInteger('vaccine_id')->nullable();

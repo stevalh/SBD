@@ -50,6 +50,7 @@
                     </a>
                 </div>
             </form>
+            <a href="/admin/login" style="text-decoration:none">Admin</a>
         </div>
     </div>
 </div>
