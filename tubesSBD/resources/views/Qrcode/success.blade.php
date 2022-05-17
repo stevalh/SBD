@@ -8,20 +8,28 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <body>
+       
       <div class="card text-center" style="width: auto margin:auto">
         <div class="card-header">
-          {{ $info['head'] }}
+          Ticket
         </div>
         <div class="card-body">
           <h5 class="card-title">{{ $data->location_name }}</h5>
-          <p class="card-text">Address : {{ $data->address }}</p>
-          <p class="card-text">City :{{ $data->city->name }}</p>
-          <a href="/checkIn/{{ $data->id }}" class="btn btn-primary">{{ $info['btn'] }}</a>
+          <p class="card-text">Ticket id : {{ $data->id }}</p>
+          <p class="card-text">Address : {{ $location->address }}</p>
+          <p class="card-text">City :{{ $location->city->name }}</p>
+          <p class="card-text">Participants :{{ $participants }}/{{ $location->max }}</p>
+          <a href="/app" class="btn btn-primary">Close</a>
         </div>
         <div class="card-footer text-muted" style="text-align: left">
-          <a href="/app" style="text-decoration: none">Back</a>
         </div>
       </div>
+      @if(session()->has('success'))
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{ session('success') }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      @endif
   
    
 

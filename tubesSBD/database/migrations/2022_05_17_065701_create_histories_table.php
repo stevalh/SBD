@@ -17,9 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId("location_id");
-            $table->enum('check',['green','red']);
-            $table->date('check-in');
-            $table->date('check-out');
+            $table->date('check_in')->nullable();
+            $table->date('check_out')->nullable();
             
         });
     }

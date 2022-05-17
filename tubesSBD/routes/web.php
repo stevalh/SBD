@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\QRController;
+use App\Http\Controllers\CheckInOut;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,12 +45,14 @@ Route::post('/logout',[LoginController::class,'logout']);
 //QR Code
 
 Route::get('/scan',[QRController::class,'index']);
-//satu route utk input data lokasi
 Route::get('/gallery',[QRController::class,'gallery']);
 Route::get('/generate/{id}',[QRController::class,'generate'])->name('generate');
-Route::get('/locate/{id}',[QRController::class,'locate'])->name('generate');
+Route::get('/locate/{id}',[QRController::class,'locate'])->name('locate');
 
-
+//Check in
+Route::get('/checkIn/{location_id}',[CheckInOut::class,'checkin']);
+Route::get('/checksuccess',[CheckInout::class,'checksuccess']);
+Route::get('/checkout',[Checkinout::class,'checkout']);
 
 
 

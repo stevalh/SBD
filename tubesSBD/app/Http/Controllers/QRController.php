@@ -32,7 +32,11 @@ class QRController extends Controller
     public function locate($id)
     {
         $data=Location::findorFail($id);
-        return view('Qrcode.locationview',compact('data'));
+        $info=[
+            'head'=>"Location",
+            'btn'=>'Check-in',
+        ];
+        return view('Qrcode.locationview',compact('data','info'));
     }
 
 }

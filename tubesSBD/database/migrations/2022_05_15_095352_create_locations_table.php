@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('location_name');
             $table->string('address');
             $table->foreignId('city_id');
-           
+           $table->unsignedInteger('max');
         });
     }
 

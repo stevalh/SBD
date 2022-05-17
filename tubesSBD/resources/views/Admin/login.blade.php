@@ -28,10 +28,7 @@
                         @enderror
                     </div>
                     <div class="form-check form-group">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" name="remember">
-                            Remember Me
-                        </label>
+                      
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-dark btn-block">Login</button>
