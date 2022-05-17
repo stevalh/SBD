@@ -24,7 +24,7 @@
     <center><div class="col-4"><div id ="reader"></div></div></center>
   </div>
   
-    <input type="text" id="result" class="res">
+    <input type="num" id="result" class="res">
  
   
   
@@ -41,7 +41,12 @@
 
       // return decodedText.val();
       // window.alert(decodedText);
+      window.location.href = decodedText;
       $(".res").val(decodedText);
+
+    
+
+
      
     }
     

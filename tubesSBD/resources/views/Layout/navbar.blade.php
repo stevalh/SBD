@@ -18,12 +18,12 @@
                             <a href="#profile">Profile</a>
                         </li>
                         <li class="scroll-to-section">
-                            @auth
+                            {{-- @auth --}}
                                 <form method="POST" action="/logout">
                                     @csrf
                                     <button>Log Out</button>
                             </div>
-                            @endauth
+                            {{-- @endauth --}}
                         </li>
                     </ul>
                     <!-- ***** Menu End ***** -->

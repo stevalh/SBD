@@ -2,6 +2,9 @@
 
 @section('content')
 @include('Layout.navbar')
+@if(!Auth::user())
+{{ Redirect::to('/') }}
+@endif
 <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
     <div class="container">
         <div class="row">

@@ -13,6 +13,11 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $token =$request->get('token');
+        if($token == null)
+        {
+            return redirect('/');
+
+        }
         
         $loginrequest=User::where('token',$token)->first();
        

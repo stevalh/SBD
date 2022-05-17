@@ -19,8 +19,8 @@ use App\Http\Controllers\QRController;
 |
 */
 //Page Controller
-Route::get('/', [PageController::class,'Home'])->middleware('guest');
-Route::get('/app', [PageController::class,'AppPage']);
+Route::get('/', [PageController::class,'Home'])->name('home')->middleware('guest');
+Route::get('/app', [PageController::class,'AppPage'])->middleware('auth');
 Route::get('/signup', [PageController::class,'RegisterPage'])->middleware('guest');
     
 Route::post('/register',[RegisterController::class,'store']);
@@ -46,10 +46,13 @@ Route::post('/logout',[LoginController::class,'logout']);
 Route::get('/scan',[QRController::class,'index']);
 //satu route utk input data lokasi
 Route::get('/gallery',[QRController::class,'gallery']);
-ROute::get('/generate/{id}',[QRController::class,'generate'])->name('generate');
+Route::get('/generate/{id}',[QRController::class,'generate'])->name('generate');
+Route::get('/locate/{id}',[QRController::class,'locate'])->name('generate');
 
 
-//ADMIN
+
+
+
 
 Route::group([
     'prefix'=>config('admin.prefix'),
