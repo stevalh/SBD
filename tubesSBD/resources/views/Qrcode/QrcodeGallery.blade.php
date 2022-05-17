@@ -34,6 +34,7 @@
                 <table class="table">
                     <thead>
                       <tr>
+                        <th scope="col">ID </th>
                         <th scope="col">Nama </th>
                         <th scope="col">Address</th>
                         <th scope="col">City</th>
@@ -43,9 +44,10 @@
                     <tbody>
                      @foreach ($data as $data)
                      <tr>
-                        <td>{{ $data->locatio_name }}</td>
+                       <td>{{ $data->id }}</td>
+                       <td>{{ $data->location_name }}</td>
                         <td>{{ $data->address }}</td>
-                        <td>{{ $data->city_id }}</td>
+                        <td>{{ $data->city->name }}</td>
                         <td>
                             <a href="{{ route('generate',$data->id) }}" class="btn btn-primary">Generate</a>
                         </td>
