@@ -36,16 +36,16 @@
                       <tr>
                         <th scope="col">Nama </th>
                         <th scope="col">Address</th>
-                        <th scope="col">City_id</th>
+                        <th scope="col">City</th>
                         <th scope="col">QR code</th>
                       </tr>
                     </thead>
                     <tbody>
                      @foreach ($data as $data)
                      <tr>
-                        <td>{{ $data->name }}</td>
+                        <td>{{ $data->locatio_name }}</td>
                         <td>{{ $data->address }}</td>
-                        <td>{{ $data->City_id }}</td>
+                        <td>{{ $data->city_id }}</td>
                         <td>
                             <a href="{{ route('generate',$data->id) }}" class="btn btn-primary">Generate</a>
                         </td>

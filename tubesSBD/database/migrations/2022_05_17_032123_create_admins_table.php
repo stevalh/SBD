@@ -13,18 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->id();
-            $table->string('fname');
+            $table->string('name');
             $table->string('email')->unique();
-            $table->foreignId('NIK')->nullable();
-            $table->unsignedInteger('OTP')->nullable();
-            $table->string('token')->nullable();
+            $table->enum('role',['admin'])->default('admin');
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
-            
-            // $table->unsignedBigInteger('test_id')->nullable();
-            // $table->unsignedBigInteger('vaccine_id')->nullable();
-        
         });
     }
 
@@ -35,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('admins');
     }
 };

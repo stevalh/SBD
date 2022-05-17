@@ -4,15 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\City;
-
-class Location extends Model
+use App\Models\Location;
+class City extends Model
 {
     use HasFactory;
     public $timestamps=false;
 
-    public function city()
+    public function locations()
     {
-        return $this->belongsTo(City::class);
+        return $this->hasMany(Location::class);
     }
 }

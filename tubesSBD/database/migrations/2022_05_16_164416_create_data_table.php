@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('locations', function (Blueprint $table) {
-            $table->id();
-            $table->string('location_name');
-            $table->string('address');
-            $table->foreignId('city_id');
-           
+        Schema::create('data', function (Blueprint $table) {
+            $table->id('NIK');
+            $table->string('fname');
+            $table->enum('status',['alive','death'])->default('alive');
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('locations');
+        Schema::dropIfExists('data');
     }
 };
