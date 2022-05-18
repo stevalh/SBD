@@ -7,6 +7,7 @@ use App\Models\history;
 use Illuminate\Support\Facades\Session;
 use App\Models\Location;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class CheckInOut extends Controller
 {
@@ -18,52 +19,45 @@ class CheckInOut extends Controller
         // }
         if(Session::has('check'))
         {
-            redirect('/checksuccess')->with('success','You already Check-In !!');
+           return  redirect('/');
         }
 
-       $history = new history();
-       $history->user_id=auth()->user()->id;
-       $history->location_id=$location_id;
-       $history->save();
-       
-      Session::put('check',$history->id);
-      Session::put('place',$history->location->location_name);
-      Session::put('created',$history->created_at);
-      return redirect('/checksuccess')->with('success','Check-in success !!');
+        $location=Location::find($location_id);
+        $user =User::find(auth()->user()->id);
+        $location->users()->attach($user);
+
+        Session::put('location',$location);
+      return redirect('/checksuccess/'.$location_id)->with('success','Check-in success !!');
     }
 
-    public function checksuccess()
+    public function checksuccess($location_id)
     {
-        $history_id=session()->get('check');
-       
-        $data=history::findorFail($history_id);
-        $participants=DB::table("histories")->where('location_id','=',$data->location->id)->where('check_out','=',false)->count();
-  
-        return view('Qrcode.success',compact('data','participants'));
+        $data=Location::with('users')->get()->find($location_id);
+        return view('Qrcode.success',compact('data'));
     }
 
-    public function checkout()
+    public function checkout($location_id)
     {
-        if(Session::has('check'))
+        if(Session::has('location'))
         {
-            $history_id=session()->get('check');
-            $activeplace=history::findorFail($history_id);
-            $activeplace->check_out=true; 
-            $activeplace->save();
-            session()->forget('check');
-            session()->forget('place');
-            session()->forget('created');
+            $data=Location::with('users')->get()->find($location_id);
+            session()->forget('location');
+            foreach($data->users as $user)
+            {
+                if($user->fname == auth()->user()->fname && $user->pivot->check_out == false)
+                {
+                   DB::table('histories')->where('locations_id','=',$data->id)->where('users_id','=',$user->id)->update(['check_out'=>true]);
+                }
+            }
+            return redirect('/app')->with('success','Check Out success !!');
         }
-        return redirect('/app')->with('success','Check Out success !!');
+        return redirect('/app');
     }
 
-    public function checkoutview()
+    public function checkoutview($location_id)
     {
-        $history_id=session()->get('check');
-       
-        $data=history::findorFail($history_id);
-        $participants=DB::table("histories")->where('location_id','=',$data->location->id)->where('check_out','=',false)->count();
+        $data=Location::with('users')->get()->find($location_id);
   
-        return view('Qrcode.ticket',compact('data','participants'));
+        return view('Qrcode.ticket',compact('data'));
     }
 }

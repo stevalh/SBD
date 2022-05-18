@@ -17,5 +17,9 @@ class Location extends Model
         return $this->belongsTo(City::class);
     }
 
+    public function users()
+    {
+        return $this->belongsToMany(User::class,'histories','locations_id','users_id')->withTimestamps()->withPivot(['check_out']);
+    }
     
 }

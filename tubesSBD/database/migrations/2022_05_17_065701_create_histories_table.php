@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId("location_id");
+            $table->foreignId('users_id');
+            $table->foreignId("locations_id");
             $table->timestamps();
             $table->boolean('check_out')->default(false);
             

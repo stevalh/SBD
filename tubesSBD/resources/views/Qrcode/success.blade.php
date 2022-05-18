@@ -16,12 +16,14 @@
         <div class="card-body">
           <h5 class="card-title">{{ $data->location_name }}</h5>
 
-          <p class="card-text">User : {{ $data->user->fname }}</p>
-          <p class="card-text">Ticket id : {{ $data->id }}</p>
-          <p class="card-text">Address : {{ $data->location->address }}</p>
-          <p class="card-text">City :{{ $data->location->city->name }}</p>
-          <p class="card-text">Participants :{{ $participants }}  /{{ $data->location->max }}</p>
-          <p class="card-text">Date Check-in :{{ Session::get('created') }}</p>
+          <p class="card-text">User : {{auth()->user()->fname }}</p>
+          <p class="card-text">Address : {{ $data->address }}</p>
+          <p class="card-text">City :{{ $data->city->name }}</p>
+          @foreach ($data->users as $user)
+              @if($user->fname == auth()->user()->fname && $user->pivot->check_out == false)
+          <p class="card-text">Date Check-in :{{ $user->pivot->created_at }}</p>
+          @endif
+          @endforeach
 
           <a href="/app" class="btn btn-primary">Close</a>
         </div>

@@ -9,6 +9,7 @@ use App\Http\Controllers\MailController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\QRController;
 use App\Http\Controllers\CheckInOut;
+use App\Http\Controllers\HistoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,11 +53,13 @@ Route::get('/locate/{id}',[QRController::class,'locate'])->name('locate');
 
 //Check in
 Route::get('/checkIn/{location_id}',[CheckInOut::class,'checkin']);
-Route::get('/checksuccess',[CheckInout::class,'checksuccess']);
+Route::get('/checksuccess/{location_id}',[CheckInout::class,'checksuccess']);
 //Checkout
-Route::get('/checkout',[Checkinout::class,'checkout']);
-Route::get('/checkview',[Checkinout::class,'checkoutview']);
+Route::get('/checkout/{location_id}',[Checkinout::class,'checkout']);
+Route::get('/checkview/{location_id}',[Checkinout::class,'checkoutview']);
 
+
+//Admin
 Route::group([
     'prefix'=>config('admin.prefix'),
     'namespace'=>'App\\Http\\Controllers',
@@ -73,7 +76,10 @@ Route::group([
     });
 });
 
-Route::get('/history',function()
-{
-    return view('history');
-});
+
+//History
+Route::get('/history',[HistoryController::class,'index']);
+
+
+ 
+
