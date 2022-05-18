@@ -11,8 +11,10 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="/app#top">Home</a></li>
+                        <li class="scroll-to-section"><a href="/app">Home</a></li>
                         <li class="scroll-to-section"><a href="/app#services">Services</a></li>
+                        <li class="scroll-to-section"><a href="/history">History</a></li>
+                        <li class="scroll-to-section"><a href="/scan">Scan</a></li>
                         <li class="scroll-to-section">
                             <a href="/profile">Profile</a>
                         </li>
