@@ -15,10 +15,12 @@
         </div>
         <div class="card-body">
           <h5 class="card-title">{{ $data->location_name }}</h5>
+
+          <p class="card-text">User : {{ $data->user->fname }}</p>
           <p class="card-text">Ticket id : {{ $data->id }}</p>
-          <p class="card-text">Address : {{ $location->address }}</p>
-          <p class="card-text">City :{{ $location->city->name }}</p>
-          <p class="card-text">Participants :{{ $participants }}/{{ $location->max }}</p>
+          <p class="card-text">Address : {{ $data->location->address }}</p>
+          <p class="card-text">City :{{ $data->location->city->name }}</p>
+          <p class="card-text">Participants :{{ $participants }}  /{{ $data->location->max }}</p>
           <a href="/app" class="btn btn-primary">Close</a>
         </div>
         <div class="card-footer text-muted" style="text-align: left">

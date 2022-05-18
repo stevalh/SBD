@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId("location_id");
-            $table->date('check_in')->nullable();
-            $table->date('check_out')->nullable();
+            $table->timestamps();
+            $table->boolean('check_out')->default(false);
             
         });
     }

@@ -11,10 +11,14 @@ class history extends Model
 {
     use HasFactory;
 
-    public $timestamps=false;
-    public function users()
+    public function user()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
+    }
+
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
     }
 
    

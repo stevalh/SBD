@@ -24,7 +24,6 @@ class CheckInOut extends Controller
        $history = new history();
        $history->user_id=auth()->user()->id;
        $history->location_id=$location_id;
-       $history->check_in=Carbon::now;
        $history->save();
       Session::put('check',$history->id);
       return redirect('/checksuccess')->with('success','Check-in success !!');
@@ -33,20 +32,23 @@ class CheckInOut extends Controller
     public function checksuccess()
     {
         $history_id=session()->get('check');
+       
         $data=history::findorFail($history_id);
-        $location=Location::findorFail($data->location_id);
-        $participants=history::where('location_id','=',$location->id)->where('check_out','=',null)->count();
-      
-        return view('Qrcode.success',compact('data','location','participants'));
+        $participants=DB::table("histories")->where('location_id','=',$data->location->id)->where('check_out','=',false)->count();
+  
+        return view('Qrcode.success',compact('data','participants'));
     }
 
     public function checkout()
     {
-        $history_id=session()->get('check');
-        $activeplace=history::findorFail($history_id);
-        $activeplace->check_out=Carbon::now()->toDateTimeString();
-        $activeplace->save(); 
-        session()->forget('check');
+        if(Session::has('check'))
+        {
+            $history_id=session()->get('check');
+            $activeplace=history::findorFail($history_id);
+            $activeplace->check_out=true; 
+            $activeplace->save();
+            session()->forget('check');
+        }
         return redirect('/app');
     }
 
