@@ -30,8 +30,8 @@
                             <div class="table-responsive">
                                 <table class="table email-table no-wrap table-hover v-middle mb-0 font-14">
                                     <tbody>
-                                        @if($user_history->id !=null)
-                                        @foreach ($user_history as $user)
+                                        
+                                        @foreach ($data->locations as $location)
                                             
                                         <!-- row -->
                                         <tr>
@@ -45,27 +45,25 @@
                                             <!-- star -->
                                             {{-- <td><i class="fa fa-star text-warning"></i></td> --}}
                                             <td>
-                                                <span class="mb-0 text-muted">A</span>
+                                                <span class="mb-0 text-muted">{{ $location->location_name }}</span>
                                             </td>
                                             <!-- Message -->
                                             <td>
                                                 
                                                 <span class="badge badge-pill text-white font-medium badge-danger mr-2">Address</span>
-                                                    <span class="text-dark">Lorem ipsum perspiciatis-</span>
+                                                    <span class="text-dark">{{ $location->address }}</span>
                                                     
                                                 </td>
                                                 <!-- Attachment -->
                                                 
                                                 <!-- Time -->
-                                                <td class="text-muted">{{ $user->histories->id }}</td>
+                                                <td class="text-muted">{{ $location->pivot->created_at }}</td>
                                             </tr>
                                             @endforeach
                                            
                                                 
-                                            @else
-                                                <span>Data Empty</span>
+                                           
                                          
-                                            @endif
                                             
                                         </tbody>
                                     </table>

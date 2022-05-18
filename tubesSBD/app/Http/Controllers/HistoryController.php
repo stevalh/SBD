@@ -10,8 +10,7 @@ class HistoryController extends Controller
     public function index()
     {
         $user_id=auth()->user()->id;
-        $user=User::findorFail($user_id);
-        $user_history=$user->histories;
-        return view('history',compact('user_history'));
+        $data=User::with('locations')->get()->find($user_id);
+        return view('history',compact('data'));
     }
 }
