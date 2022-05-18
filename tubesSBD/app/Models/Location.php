@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\City;
+use App\Models\User;
 
 class Location extends Model
 {
@@ -14,5 +15,10 @@ class Location extends Model
     public function city()
     {
         return $this->belongsTo(City::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
     }
 }

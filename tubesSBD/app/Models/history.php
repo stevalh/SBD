@@ -14,12 +14,9 @@ class history extends Model
     public $timestamps=false;
     public function users()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsToMany(User::class);
     }
 
-    public function locations()
-    {
-        return $this->hasMany(Location::class);
-    }
+   
    
 }

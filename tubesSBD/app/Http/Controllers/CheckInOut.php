@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use App\Models\history;
 use Illuminate\Support\Facades\Session;
@@ -24,7 +24,7 @@ class CheckInOut extends Controller
        $history = new history();
        $history->user_id=auth()->user()->id;
        $history->location_id=$location_id;
-       $history->check_in=now();
+       $history->check_in=Carbon::now;
        $history->save();
       Session::put('check',$history->id);
       return redirect('/checksuccess')->with('success','Check-in success !!');
@@ -42,7 +42,10 @@ class CheckInOut extends Controller
 
     public function checkout()
     {
-        
+        $history_id=session()->get('check');
+        $activeplace=history::findorFail($history_id);
+        $activeplace->check_out=Carbon::now()->toDateTimeString();
+        $activeplace->save(); 
         session()->forget('check');
         return redirect('/app');
     }
