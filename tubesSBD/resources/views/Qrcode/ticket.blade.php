@@ -23,9 +23,10 @@
           <p class="card-text">Participants :{{ $participants }}  /{{ $data->location->max }}</p>
           <p class="card-text">Date Check-in :{{ Session::get('created') }}</p>
 
-          <a href="/app" class="btn btn-primary">Close</a>
+          <a href="/checkout" class="btn btn-primary">Check Out</a>
         </div>
         <div class="card-footer text-muted" style="text-align: left">
+            <a href="/app" class="btn btn-primary">Close</a>
         </div>
       </div>
 

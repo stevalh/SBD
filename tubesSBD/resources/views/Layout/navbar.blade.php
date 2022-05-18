@@ -30,6 +30,17 @@
                     </a>
                     <!-- ***** Menu End ***** -->
                 </nav>
+                @if(Session::has('check'))
+                <div class="alert alert-info" role="alert">
+                   <h5> {{ Session::get('place') }}</h5><a href="/checkview" class="btn btn-primary">Checkout</a>
+                  </div>
+                  @endif
+                  @if(session()->has('success'))
+                  <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      {{ session('success') }}
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                  @endif
             </div>
         </div>
     </div>

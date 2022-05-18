@@ -53,7 +53,9 @@ Route::get('/locate/{id}',[QRController::class,'locate'])->name('locate');
 //Check in
 Route::get('/checkIn/{location_id}',[CheckInOut::class,'checkin']);
 Route::get('/checksuccess',[CheckInout::class,'checksuccess']);
+//Checkout
 Route::get('/checkout',[Checkinout::class,'checkout']);
+Route::get('/checkview',[Checkinout::class,'checkoutview']);
 
 Route::group([
     'prefix'=>config('admin.prefix'),
@@ -69,4 +71,9 @@ Route::group([
         Route::view('/post','Admin.data-post')->name('post')->middleware('can:role,"admin"');
         Route::view('/admin','Admin.data-admin')->name('admin')->middleware('can:role,"admin"');
     });
+});
+
+Route::get('/history',function()
+{
+    return view('history');
 });

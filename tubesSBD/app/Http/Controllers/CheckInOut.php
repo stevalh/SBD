@@ -18,14 +18,17 @@ class CheckInOut extends Controller
         // }
         if(Session::has('check'))
         {
-            redirect('/checkview')->with('success','You already Check-In !!');
+            redirect('/checksuccess')->with('success','You already Check-In !!');
         }
 
        $history = new history();
        $history->user_id=auth()->user()->id;
        $history->location_id=$location_id;
        $history->save();
+       
       Session::put('check',$history->id);
+      Session::put('place',$history->location->location_name);
+      Session::put('created',$history->created_at);
       return redirect('/checksuccess')->with('success','Check-in success !!');
     }
 
@@ -48,12 +51,19 @@ class CheckInOut extends Controller
             $activeplace->check_out=true; 
             $activeplace->save();
             session()->forget('check');
+            session()->forget('place');
+            session()->forget('created');
         }
-        return redirect('/app');
+        return redirect('/app')->with('success','Check Out success !!');
     }
 
     public function checkoutview()
     {
-
+        $history_id=session()->get('check');
+       
+        $data=history::findorFail($history_id);
+        $participants=DB::table("histories")->where('location_id','=',$data->location->id)->where('check_out','=',false)->count();
+  
+        return view('Qrcode.ticket',compact('data','participants'));
     }
 }
