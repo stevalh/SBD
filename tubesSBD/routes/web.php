@@ -23,7 +23,7 @@ use App\Http\Controllers\CheckInOut;
 Route::get('/', [PageController::class,'Home'])->name('home')->middleware('guest');
 Route::get('/app', [PageController::class,'AppPage'])->middleware('auth');
 Route::get('/signup', [PageController::class,'RegisterPage'])->middleware('guest');
-    
+
 Route::post('/register',[RegisterController::class,'store']);
 
 Route::get('/login',[LoginController::class,'authenticate'])->middleware('guest');
@@ -31,11 +31,12 @@ Route::get('/login',[LoginController::class,'authenticate'])->middleware('guest'
 Route::view('/userVerify','Auth.send-email')->name('sendtoken')->middleware('guest');
 Route::post('/send',[MailController::class,'send'])->name('send.email')->middleware('guest');
 
-
-
 Route::get('/send-email',[MailController::class,'send_email'])->middleware('guest');
 Route::post('/resend/{userEmail}',[MailController::class,'resend'])->middleware('guest');
 
+Route::get('/profile', function () {
+    return view('profile');
+});
 
 //Log out
 Route::post('/logout',[LoginController::class,'logout']);
@@ -53,9 +54,6 @@ Route::get('/locate/{id}',[QRController::class,'locate'])->name('locate');
 Route::get('/checkIn/{location_id}',[CheckInOut::class,'checkin']);
 Route::get('/checksuccess',[CheckInout::class,'checksuccess']);
 Route::get('/checkout',[Checkinout::class,'checkout']);
-
-
-
 
 Route::group([
     'prefix'=>config('admin.prefix'),
