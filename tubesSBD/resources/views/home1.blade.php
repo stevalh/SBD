@@ -16,8 +16,8 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     @auth
-                                    <h6>Hi,{{ auth()->user()->fname }}</h6>
-                                    
+                                    <h6>Hi, {{ auth()->user()->fname }}</h6>
+
                                     @else
                                     <h6>Hi</h6>
 
@@ -74,13 +74,6 @@
                                             <span class="icon"><img src="assets/images/service-icon-02.png"
                                                     alt=""></span>
                                             Covid-19 Test
-                                        </div>
-                                    </div>
-                                    <div class="last-thumb">
-                                        <div class="thumb">
-                                            <span class="icon"><img src="assets/images/service-icon-03.png"
-                                                    alt=""></span>
-                                            Travel Regulations
                                         </div>
                                     </div>
                                 </div>

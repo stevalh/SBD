@@ -11,11 +11,10 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                       
-                        <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="#services">Services</a></li>
+                        <li class="scroll-to-section"><a href="/app#top">Home</a></li>
+                        <li class="scroll-to-section"><a href="/app#services">Services</a></li>
                         <li class="scroll-to-section">
-                            <a href="#profile">Profile</a>
+                            <a href="/profile">Profile</a>
                         </li>
                         <li class="scroll-to-section">
                             {{-- @auth --}}
@@ -26,6 +25,9 @@
                             {{-- @endauth --}}
                         </li>
                     </ul>
+                    <a class="menu-trigger">
+                        <span></span>
+                    </a>
                     <!-- ***** Menu End ***** -->
                 </nav>
             </div>
