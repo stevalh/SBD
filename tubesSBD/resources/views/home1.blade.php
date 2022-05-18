@@ -76,13 +76,6 @@
                                             Covid-19 Test
                                         </div>
                                     </div>
-                                    <div class="last-thumb">
-                                        <div class="thumb">
-                                            <span class="icon"><img src="assets/images/service-icon-03.png"
-                                                    alt=""></span>
-                                            Travel Regulations
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="col-lg-12">

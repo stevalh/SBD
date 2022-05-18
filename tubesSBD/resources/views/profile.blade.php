@@ -18,9 +18,21 @@
                                     @else
                                     <h6>Hi</h6>
                                     @endauth
-                                    <h2>TraceTogether, safer together</h2>
-                                    <p>Join over 90% of people in Singapore in stopping the spread of COVID-19 through
-                                        community-driven contact tracing</p>
+                                    {{-- Profile Menu --}}
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="profile-menu">
+                                                    <ul class="nav">
+                                                        <li><a href="#">COVID-19 Test</a></li>
+                                                        <li><a href="#">Vaccination History & Tickets</a></li>
+                                                        <li><a href="#">Vaccine Certificate</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- End Profile Menu --}}
                                 </div>
                             </div>
                         </div>
