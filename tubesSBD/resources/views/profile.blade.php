@@ -25,7 +25,7 @@
                                                 <div class="profile-menu">
                                                     <ul class="nav">
                                                         <li><a href="#">COVID-19 Test</a></li>
-                                                        <li><a href="#">Vaccination History & Tickets</a></li>
+                                                        <li><a href="#">Vaccination History</a></li>
                                                         <li><a href="#">Vaccine Certificate</a></li>
                                                     </ul>
                                                 </div>
