@@ -57,7 +57,7 @@ class CheckInOut extends Controller
     public function checkoutview($location_id)
     {
         $data=Location::with('users')->get()->find($location_id);
-  
+
         return view('Qrcode.ticket',compact('data'));
     }
 }
