@@ -22,14 +22,17 @@ class RegisterController extends Controller
             [
                 
                 'fname' => 'required|alpha',
-                'email' => 'required|email:rfc,dns|unique:users|email'
+                'email' => 'required|email:rfc,dns|unique:users|email',
+                'NIK'=>'required|min:8|max:8'
             ],
             [
                 'fname.required'=>'Name cannot be empty',
                 'fname.alpha'=>'Only alphabet is allowed',
                 'email.required'=>"Email cannot be empty",
                 'email.email'=>'Email is Not Valid',
-                'email.unique'=>"This email address is registered"
+                'email.unique'=>"This email address is registered",
+                'NIK.min:8'=>'NIK invalid',
+                'NIK.max:8'=>'NIK invalid'
             ]
         );
   

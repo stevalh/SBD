@@ -70,8 +70,8 @@ Route::group([
 
     Route::middleware(['auth:admin'])->group(function () {
         Route::post('logout','LoginAdminController@logout')->name('admin.logout');
-        Route::view('/','Admin.dashboard')->name('dashboard');
-        Route::view('/post','Admin.data-post')->name('post')->middleware('can:role,"admin"');
+        Route::view('/','Admin.index')->name('dashboard');
+        Route::view('/user','Admin.user')->name('user');
         Route::view('/admin','Admin.data-admin')->name('admin')->middleware('can:role,"admin"');
     });
 });
@@ -81,5 +81,8 @@ Route::group([
 Route::get('/history',[HistoryController::class,'index']);
 
 
+
+//Test
+Route::view('/testadmin','Admin.index');
  
 
