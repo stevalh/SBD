@@ -10,6 +10,8 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\QRController;
 use App\Http\Controllers\CheckInOut;
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\CovidTestController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -79,6 +81,8 @@ Route::group([
 //  History
 Route::get('/history',[HistoryController::class,'index']);
 
+// Certificate
+Route::get('/certificate', [CertificateController::class, 'index']);
 
-
-
+// Vaccine
+Route::get('/covid19-test', [CertificateController::class, 'index']);
