@@ -76,8 +76,7 @@ Route::group([
     });
 });
 
-
-//History
+//  History
 Route::get('/history',[HistoryController::class,'index']);
 
 
