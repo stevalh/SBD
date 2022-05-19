@@ -40,23 +40,23 @@ Route::get('/profile', function () {
 });
 
 //Log out
-Route::post('/logout',[LoginController::class,'logout']);
+Route::post('/logout',[LoginController::class,'logout'])->middleware('auth');
 
 // Route::get('/User',[MailController::class,'send']);
 
 //QR Code
 
-Route::get('/scan',[QRController::class,'index']);
+Route::get('/scan',[QRController::class,'index'])->middleware('auth');
 Route::get('/gallery',[QRController::class,'gallery']);
 Route::get('/generate/{id}',[QRController::class,'generate'])->name('generate');
-Route::get('/locate/{id}',[QRController::class,'locate'])->name('locate');
+Route::get('/locate/{id}',[QRController::class,'locate'])->name('locate')->middleware('auth');
 
 //Check in
-Route::get('/checkIn/{location_id}',[CheckInOut::class,'checkin']);
-Route::get('/checksuccess/{location_id}',[CheckInout::class,'checksuccess']);
+Route::get('/checkIn/{location_id}',[CheckInOut::class,'checkin'])->middleware('auth');
+Route::get('/checksuccess/{location_id}',[CheckInout::class,'checksuccess'])->middleware('auth');
 //Checkout
-Route::get('/checkout/{location_id}',[Checkinout::class,'checkout']);
-Route::get('/checkview/{location_id}',[Checkinout::class,'checkoutview']);
+Route::get('/checkout/{location_id}',[Checkinout::class,'checkout'])->middleware('auth');
+Route::get('/checkview/{location_id}',[Checkinout::class,'checkoutview'])->middleware('auth');
 
 
 //Admin
