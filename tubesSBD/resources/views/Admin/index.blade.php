@@ -11,6 +11,37 @@
                         <h1 class="h3 mb-0 text-gray-800">Welcome Back,{{ Auth::user()->name }}</h1>
                         
                     </div>
+                    <div>
+                    <div class="card border-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Users</div>
+                        <div class="card-body text-dark">
+                          <h5 class="card-title">Total Users</h5>
+                          <p class="card-text" style="font-size:">{{ $users }}</p>
+                        </div>
+                      </div>
+                    <div class="card border-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">City</div>
+                        <div class="card-body text-dark">
+                          <h5 class="card-title">Total Cities</h5>
+                          <p class="card-text">{{ $cities }}</p>
+                        </div>
+                      </div>
+                    <div class="card border-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Location</div>
+                        <div class="card-body text-dark">
+                          <h5 class="card-title">Total Locations</h5>
+                          <p class="card-text">{{ $locations }}</p>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="card border-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Test</div>
+                        <div class="card-body text-dark">
+                          <h5 class="card-title">Total Tests</h5>
+                          <p class="card-text">{{ $tests }}</p>
+                        </div>
+                      </div>
 
                     <!-- Content Row -->
                     

@@ -72,8 +72,11 @@ Route::group([
 
     Route::middleware(['auth:admin'])->group(function () {
         Route::post('logout','LoginAdminController@logout')->name('admin.logout');
-        Route::view('/','Admin.index')->name('dashboard');
+        Route::get('/','AdminController@index')->name('dashboard');
         Route::get('/user','AdminController@userview')->name('user');
+        Route::get('/city','AdminController@cityview')->name('city');
+        Route::get('/location','AdminController@locationview')->name('location');
+        Route::get('/type','AdminController@typeview')->name('vaccinetype');
         Route::view('/admin','Admin.data-admin')->name('admin');
     });
 });

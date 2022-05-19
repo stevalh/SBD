@@ -6,28 +6,29 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                       
-                        Users Table
+                       Location Table
                     </div>
+                    <div class="mb-2">
+                        <button type="button" class="btn btn-primary">Add City</button>
+                    </div>
+                    
 
                     <table class="table">
                         <thead class="thead-dark">
                           <tr>
                             <th scope="col">Id</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">NIK</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Status</th>
+                            <th scope="col">Location Name</th>
+                            <th scope="col">City Name</th>
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $user)
+                            @foreach ($locations as $location)
                                 
                             <tr>
-                                <th scope="row">{{ $user->id }}</th>
-                                <td>{{ $user->fname }}</td>
-                                <td>{{ $user->NIK }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->status }}</td>
+                                <th scope="row">{{ $location->id }}</th>
+                                <td>{{ $location->location_name }}</td>
+                                <td>{{ $location->city->name }}</td>
+                                
                             </tr>
                             
                             @endforeach

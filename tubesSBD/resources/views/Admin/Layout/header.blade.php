@@ -66,12 +66,12 @@
                     <span>Users</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="{{ route('city') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>City</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="{{ route('location') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Location</span></a>
             </li>
@@ -86,7 +86,7 @@
                     <span>Test</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="{{ route('vaccinetype') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Types of Vaccine</span></a>
             </li>

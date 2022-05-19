@@ -6,28 +6,23 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                       
-                        Users Table
+                       Vaccine Table
                     </div>
 
                     <table class="table">
                         <thead class="thead-dark">
                           <tr>
                             <th scope="col">Id</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">NIK</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Status</th>
+                            <th scope="col">Vaccine Name</th>
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $user)
+                            @foreach ($vaccines as $vaccine)
                                 
                             <tr>
-                                <th scope="row">{{ $user->id }}</th>
-                                <td>{{ $user->fname }}</td>
-                                <td>{{ $user->NIK }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->status }}</td>
+                                <th scope="row">{{ $vaccine->id }}</th>
+                                <td>{{ $vaccine->name }}</td>
+                                
                             </tr>
                             
                             @endforeach
@@ -76,5 +71,3 @@
     <!-- End of Page Wrapper -->
 
   @endsection
-
-   
