@@ -84,13 +84,10 @@ Route::get('/history',[HistoryController::class,'index']);
 // Certificate
 Route::get('/certificate', [CertificateController::class, 'index']);
 
-<<<<<<< HEAD
 
 //Test
 Route::view('/testadmin','Admin.index');
  
 
-=======
 // Vaccine
 Route::get('/covid19-test', [CertificateController::class, 'index']);
->>>>>>> 585e1bdfdc1af6c755b80288a0baf48a67b51c48
