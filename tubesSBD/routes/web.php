@@ -81,5 +81,5 @@ Route::group([
 Route::get('/history',[HistoryController::class,'index']);
 
 
- 
+
 
