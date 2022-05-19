@@ -73,8 +73,8 @@ Route::group([
     Route::middleware(['auth:admin'])->group(function () {
         Route::post('logout','LoginAdminController@logout')->name('admin.logout');
         Route::view('/','Admin.index')->name('dashboard');
-        Route::view('/user','Admin.user')->name('user');
-        Route::view('/admin','Admin.data-admin')->name('admin')->middleware('can:role,"admin"');
+        Route::get('/user','AdminController@userview')->name('user');
+        Route::view('/admin','Admin.data-admin')->name('admin');
     });
 });
 
