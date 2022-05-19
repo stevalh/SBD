@@ -14,7 +14,7 @@
 
         .scanqr{
             display: grid;
-            place-items: center;
+            justify-content: center;
         }
     </style>
 
@@ -23,16 +23,17 @@
 <body>
 
     <div class="scanqr">
-        <h1>Scan</h1>
+    <h1 style="text-align: center">Scan</h1>
     <div class="row" >
         <div class="col-4" ><div id ="reader" ></div></div>
     </div>
     {{-- <input type="num" id="result" class="res"> --}}
     <form method="GET" action="/app">
       @csrf
-    <button type="submit" class="btn btn-primary btn-lg mt-2">Large button</button>
+    <button type="submit" class="btn btn-primary btn-lg mt-2">Back to home</button>
     </form>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
