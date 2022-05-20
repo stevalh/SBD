@@ -19,11 +19,11 @@
             @csrf
             <div class="form-group" >
                 <label for="city">Vaccine Name</label>
-                <input type="text" class="form-control " id="city" name="vaccine_name" required>
+                <input type="text" class="form-control " id="city" name="name" required>
             </div>
 
             <div class="row" style="color: red">
-                @error('vaccine_name')
+                @error('name')
                
                     {{ $message }}
             </div>

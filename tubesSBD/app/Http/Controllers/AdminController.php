@@ -40,7 +40,7 @@ class AdminController extends Controller
 
 
 
-    
+
     public function certiview()
     {
         $certificates=Certificate::all();
@@ -130,11 +130,11 @@ class AdminController extends Controller
       
         $validate= $request->validate(
             [
-                'vaccine_name'=>'required|unique:vaccine_types'
+                'name'=>'required|unique:vaccine_types'
             ],
             [
                 
-                'vaccine_name.unique'=>'Vaccine has already been registered in our database'
+                'name.unique'=>'Vaccine has already been registered in our database'
             ]     
             );
       
@@ -142,7 +142,7 @@ class AdminController extends Controller
           
 
             $vaccine=new vaccine_type();
-            $vaccine->vaccine_name =$validate['vaccine_name'];
+            $vaccine->name =$validate['name'];
             $vaccine->save();
 
             return redirect('/administrator/type')->with('success','Added new Types of Vaccine');

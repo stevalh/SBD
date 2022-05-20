@@ -32,7 +32,7 @@
                 @foreach ($vaccines as $vaccine)
                     <tr>
                         <th scope="row">{{ $vaccine->id }}</th>
-                        <td>{{ $vaccine->vaccine_name }}</td>
+                        <td>{{ $vaccine->name }}</td>
 
                     </tr>
                 @endforeach

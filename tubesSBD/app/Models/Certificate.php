@@ -21,6 +21,6 @@ class Certificate extends Model
     }
     public function vactype()
     {
-        return $this->belongsTo(vaccine_type::class);
+        return $this->belongsTo(vaccine_type::class,'vaccine_id');
     }
 }

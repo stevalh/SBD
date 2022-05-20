@@ -43,7 +43,7 @@
                     <td>{{ $certi->owner_name }}</td>
                     <td>{{ $certi->owner_NIK }}</td>
                     <td>{{ $certi->user->email }}</td>
-                    <td>{{ $certi->vactype->vaccine_name }}</td>
+                    <td>{{ $certi->vactype->name }}</td>
                 </tr>
                 @endforeach
                 

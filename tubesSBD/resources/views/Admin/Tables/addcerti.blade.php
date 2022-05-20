@@ -65,7 +65,7 @@
                 <label for="city">Vaccine</label>
                 <select class="form-select" aria-label="Default select example" name="vaccine">
                   @foreach ($vaccines as $vaccine)
-                  <option value="{{ $vaccine->id }}">{{ $vaccine->vaccine_name }}</option>
+                  <option value="{{ $vaccine->id }}">{{ $vaccine->name }}</option>
                   @endforeach
                    
                   </select>
