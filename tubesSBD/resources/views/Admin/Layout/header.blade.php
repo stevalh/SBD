@@ -57,7 +57,7 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            
+
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
@@ -90,7 +90,7 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Types of Vaccine</span></a>
             </li>
-       
+
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -99,7 +99,7 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-           
+
 
         </ul>
         <!-- End of Sidebar -->
@@ -118,27 +118,27 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                   
+
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        
-                      
-                        
 
-                 
-                        
+
+
+
+
+
                         <div class="topbar-divider d-none d-sm-block"></div>
-                        
+
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link" data-toggle="dropdown">{{ Auth::user()->name }}</a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                
+
                                 <a href="{{ route('admin.logout') }}"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                class="dropdown-item">Logout</a>
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                    class="dropdown-item">Logout</a>
                                 <form action="{{ route('admin.logout') }}" id="logout-form" method="post">
                                     @csrf
                                 </form>

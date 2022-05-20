@@ -25,9 +25,12 @@
             transform: translate(-50%, -50%);
             padding: 10px;
         }
-        .container img{
+
+        .container img {
             width: 350px;
         }
+
     </style>
 </head>
+
 <body>
