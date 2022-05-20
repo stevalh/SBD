@@ -78,6 +78,7 @@ Route::group([
         Route::get('/location','AdminController@locationview')->name('location');
         Route::get('/type','AdminController@typeview')->name('vaccinetype');
         Route::get('/certi','AdminController@certiview')->name('certi');
+        Route::get('/test','AdminController@testview')->name('test');
         Route::get('/addcityview','AdminController@addcityview')->name('addcityview');
         Route::post('/addcity','AdminController@addcity')->name('addcity');
         Route::get('/addlocationview','AdminController@addlocationview')->name('addlocationview');
@@ -88,6 +89,10 @@ Route::group([
         Route::get('/addcertificateview','AdminController@addcertiview')->name('addcertiview');
         Route::post('/addcertificate','AdminController@addcerti')->name('addcertificate');
         
+        Route::get('/addtestview','AdminController@addtestview')->name('addtestview');
+        Route::post('/addtest','AdminController@addtest')->name('addtest');
+
+
         Route::view('/admin','Admin.data-admin')->name('admin');
     });
 });

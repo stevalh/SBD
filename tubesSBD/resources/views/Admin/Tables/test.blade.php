@@ -15,10 +15,10 @@
     
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
-            Certificate Table
+            COVID Result Test Table
         </div>
         <div class="mb-2">
-            <a href="{{ route('addcertiview') }}" class="btn btn-primary">Give Certificate</a>
+            <a href="{{ route('addtestview') }}" class="btn btn-primary">Give Result</a>
         </div>
 
 
@@ -28,24 +28,24 @@
                     <th scope="col">Id</th>
                     
                     <th scope="col">Admin</th>
-                    <th scope="col">Owner</th>
-                    <th scope="col">Owner NIK</th>
-                    <th scope="col">Owner email</th>
-                    <th scope="col">Vaccine Type</th>
-                    <th scope="col">Date of Doze</th>
+                    <th scope="col">Patien Name</th>
+                    <th scope="col">Patient NIK</th>
+                    <th scope="col">Patient email</th>
+                    <th scope="col">Result</th>
+                    <th scope="col">Date of the Swab Test</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($certificates as $certi)
+                @foreach ($tests as $test)
                     
                 <tr>
-                    <td>{{ $certi->id }}</td>
-                    <td>{{ $certi->admin->name }}</td>
-                    <td>{{ $certi->owner_name }}</td>
-                    <td>{{ $certi->owner_NIK }}</td>
-                    <td>{{ $certi->user->email }}</td>
-                    <td>{{ $certi->vactype->name }}</td>
-                    <td>{{ $certi->created_at }}</td>
+                    <td>{{ $test->id }}</td>
+                    <td>{{ $test->admin->name }}</td>
+                    <td>{{ $test->patient_name }}</td>
+                    <td>{{ $test->patient_NIK }}</td>
+                    <td>{{ $test->user->email }}</td>
+                    <td>{{ $test->result }}</td>
+                    <td>{{ $test->created_at }}</td>
                 </tr>
                 @endforeach
                 

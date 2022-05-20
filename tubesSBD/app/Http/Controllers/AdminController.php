@@ -11,7 +11,7 @@ use App\Models\vaccine_type;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Data;
-
+use App\Models\Test;
 
 class AdminController extends Controller
 {
@@ -46,6 +46,12 @@ class AdminController extends Controller
         $certificates=Certificate::all();
 
         return view('Admin.Tables.certificate',compact('certificates'));
+    }
+    public function testview()
+    {
+        $tests=Test::all();
+
+        return view('Admin.Tables.test',compact('tests'));
     }
 
 
@@ -200,6 +206,62 @@ class AdminController extends Controller
             $certificates->save();
 
             return redirect('/administrator/certi')->with('success','Certificate has been sent successfully');
+
+    }
+
+
+
+    public function addtestview()
+    {
+        
+        return view('Admin.Tables.addtest');
+    }
+
+    public function addtest(Request $request)
+    {
+      
+        $validate= $request->validate(
+            [
+                'name'=>'required|regex:/^[\pL\s\-]+$/u',
+                'NIK'=>'required|max:8|min:8',
+                'email'=>'required|email:dns',
+                'result'=>'required',
+                
+            ],
+            [
+                'name.regex'=>'Only alphabet is allowed',
+                'NIK.max'=>'NIK contains 8 digits',
+                'NIK.min'=>'NIK contains 8 digits',
+                'email.email'=>'Email Format invalid'
+            ]     
+            );
+            
+            $data=DB::table('data')->where('NIK','=',$validate['NIK'])->first();
+            if(DB::table('data')->where('NIK','=',$validate['NIK'])->count() >0)
+            {
+                if($data->fname != $validate['name'])
+                {
+                    return redirect('/administrator/addtestview')->with('check',"NIK and name doesn't match");
+                }
+            }
+            else
+            {
+                return redirect('/administrator/addtestview')->with('check',"NIK and name doesn't match");
+            }
+
+            $user=DB::table('users')->where('email','=',$validate['email'])->first();
+
+            $test=new Test();
+            $test->admin_id =auth()->user()->id;
+            $test->patient_name=$validate['name'];
+            $test->patient_NIK=$validate['NIK'];
+            $test->patient_id=$user->id;
+            $test->result=$validate['result'];
+            $test->save();
+            //jika negative ubah status user
+            // if()
+
+            return redirect('/administrator/test')->with('success','Test Result has been sent successfully');
 
     }
 }

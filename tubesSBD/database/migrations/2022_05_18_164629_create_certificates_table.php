@@ -29,9 +29,7 @@ return new class extends Migration
             $table->unsignedBigInteger('owner_NIK');
 
           
-            // $table->foreignId('admin_id');
-            // $table->foreignId('user_id');
-            // $table->foreignId('vaccine_id');
+           
             $table->timestamps();
           
           

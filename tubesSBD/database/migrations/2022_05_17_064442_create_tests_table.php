@@ -15,8 +15,15 @@ return new class extends Migration
     {
         Schema::create('tests', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('NIK');
-            $table->foreignId('city_id');
+            $table->unsignedBigInteger('admin_id');
+            $table->foreign('admin_id')->references('id')->on('admins')->onDelete('restrict');
+            $table->unsignedBigInteger('patient_id');
+            $table->foreign('patient_id')->references('id')->on('users')->onDelete('restrict');
+            $table->string('result');
+            
+            
+            $table->string('patient_name');
+            $table->unsignedBigInteger('patient_NIK');
             
             $table->timestamps();
         });
