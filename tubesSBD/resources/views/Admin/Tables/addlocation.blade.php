@@ -21,13 +21,30 @@
                 <label for="city">City Name</label>
                 <input type="text" class="form-control " id="city" name="name" >
             </div>
+            @error('name')
             <div class="row" style="color: red">
-                @error('name')
                
                     {{ $message }}
                 
+                </div>
             @enderror      
+
+            <div class="form-group" >
+                <label for="city">City </label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
             </div>
+            @error('name')
+            <div class="row" style="color: red">
+               
+                    {{ $message }}
+                
+                </div>
+            @enderror      
             <button type="submit" class="btn btn-primary">Create a New City</button>
         </form>
 

@@ -77,6 +77,8 @@ Route::group([
         Route::get('/city','AdminController@cityview')->name('city');
         Route::get('/location','AdminController@locationview')->name('location');
         Route::get('/type','AdminController@typeview')->name('vaccinetype');
+        Route::get('/addcityview','AdminController@addcityview')->name('addcityview');
+        Route::post('/addcity','AdminController@addcity')->name('addcity');
         Route::view('/admin','Admin.data-admin')->name('admin');
     });
 });

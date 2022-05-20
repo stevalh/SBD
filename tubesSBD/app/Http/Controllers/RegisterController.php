@@ -21,18 +21,18 @@ class RegisterController extends Controller
       $validatedData = $request->validate(
             [
                 
-                'fname' => 'required|alpha',
+                'fname' => 'required|regex:/^[\pL\s\-]+$/u',
                 'email' => 'required|email:rfc,dns|unique:users|email',
-                'NIK'=>'required|min:8|max:8'
+                // 'NIK'=>'required|min:8|max:8'
             ],
             [
                 'fname.required'=>'Name cannot be empty',
-                'fname.alpha'=>'Only alphabet is allowed',
+                'fname.regex'=>'Only alphabet is allowed',
                 'email.required'=>"Email cannot be empty",
                 'email.email'=>'Email is Not Valid',
                 'email.unique'=>"This email address is registered",
-                'NIK.min:8'=>'NIK invalid',
-                'NIK.max:8'=>'NIK invalid'
+                // 'NIK.min:8'=>'NIK invalid',
+                // 'NIK.max:8'=>'NIK invalid'
             ]
         );
   

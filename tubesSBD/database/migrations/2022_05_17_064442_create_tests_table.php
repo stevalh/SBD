@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('NIK');
             $table->foreignId('city_id');
-            $table->enum('result',['positive','negative']);
+            
             $table->timestamps();
         });
     }
