@@ -4,9 +4,21 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
+
+        @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    
+
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
             Vaccine Table
+        </div>
+        <div class="mb-2">
+            <a href="{{ route('type') }}" class="btn btn-primary">Add</a>
         </div>
 
         <table class="table">

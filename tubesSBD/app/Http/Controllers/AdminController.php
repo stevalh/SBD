@@ -74,4 +74,55 @@ class AdminController extends Controller
             return redirect('/administrator/city')->with('success','Added new City');
 
     }
+
+    public function addlocationview()
+    {
+        $cities=City::orderBy('name')->get();
+        return view('Admin.Tables.addlocation',compact('cities'));
+    }
+
+    public function addlocation(Request $request)
+    {
+      
+        $data= $request->all();
+              
+
+            $location=new Location();
+            $location->location_name =$data['name'];
+            $location->address =$data['address'];
+            $location->city_id =$data['city'];
+            $location->save();
+
+            return redirect('/administrator/location')->with('success','Added new location');
+
+    }
+    public function addtypeview()
+    {
+        
+        return view('Admin.Tables.addvaccine');
+    }
+
+    public function addvaccine(Request $request)
+    {
+      
+        $validate= $request->validate(
+            [
+                'vaccine_name'=>'required|unique:vaccine_types'
+            ],
+            [
+                
+                'vaccine_name.unique'=>'Vaccine has already been registered in our database'
+            ]     
+            );
+      
+
+          
+
+            $vaccine=new vaccine_type();
+            $vaccine->vaccine_name =$validate['vaccine_name'];
+            $vaccine->save();
+
+            return redirect('/administrator/type')->with('success','Added new Types of Vaccine');
+
+    }
 }

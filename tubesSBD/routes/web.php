@@ -79,6 +79,10 @@ Route::group([
         Route::get('/type','AdminController@typeview')->name('vaccinetype');
         Route::get('/addcityview','AdminController@addcityview')->name('addcityview');
         Route::post('/addcity','AdminController@addcity')->name('addcity');
+        Route::get('/addlocationview','AdminController@addlocationview')->name('addlocationview');
+        Route::post('/addlocation','AdminController@addlocation')->name('addlocation');
+        Route::get('/addtypeview','AdminController@addtypeview')->name('type');
+        Route::post('/addvaccine','AdminController@addvaccine')->name('addvaccine');
         Route::view('/admin','Admin.data-admin')->name('admin');
     });
 });

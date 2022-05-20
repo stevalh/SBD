@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('data', function (Blueprint $table) {
             $table->id('NIK');
             $table->string('fname');
-            $table->enum('status',['alive','death'])->default('alive');
+           
         });
     }
 

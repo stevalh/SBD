@@ -6,45 +6,37 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
-            Add City
+            Add Location
 
         </div>
 
         <div class="mb-2">
-            <a href="{{ route('city') }}" class="btn btn-primary">Back</a>
+            <a href="{{ route('location') }}" class="btn btn-primary">Back</a>
         </div>
 
 
-        <form method="POST" action="{{ route('addcity') }}">
+        <form method="POST" action="{{ route('addlocation') }}">
             @csrf
             <div class="form-group" >
-                <label for="city">City Name</label>
-                <input type="text" class="form-control " id="city" name="name" >
+                <label for="city">Location Name</label>
+                <input type="text" class="form-control " id="city" name="name" required>
             </div>
-            @error('name')
-            <div class="row" style="color: red">
-               
-                    {{ $message }}
-                
-                </div>
-            @enderror      
+            <div class="form-group" >
+                <label for="city">Address</label>
+                <input type="text" class="form-control " id="city" name="address" required>
+            </div>
+            
 
             <div class="form-group" >
                 <label for="city">City </label>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                <select class="form-select" aria-label="Default select example" name="city">
+                  @foreach ($cities as $city)
+                      
+                  <option value="{{ $city->id }}">{{ $city->name }}</option>
+                  @endforeach
+                   
                   </select>
             </div>
-            @error('name')
-            <div class="row" style="color: red">
-               
-                    {{ $message }}
-                
-                </div>
-            @enderror      
             <button type="submit" class="btn btn-primary">Create a New City</button>
         </form>
 
