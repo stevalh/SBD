@@ -77,7 +77,7 @@
                     <span>Location</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="{{ route('certi') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Certificate</span></a>
             </li>

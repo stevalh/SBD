@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Certificate;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\City;
@@ -19,7 +20,8 @@ class AdminController extends Controller
         $cities=DB::table('cities')->count();
         $locations=DB::table('locations')->count();
         $tests=DB::table('tests')->count();
-        return view('Admin.index',compact('users','cities','locations','tests'));
+        $types=DB::table('vaccine_types')->count();
+        return view('Admin.index',compact('users','cities','locations','tests','types'));
     }
     public function userview()
     {
@@ -32,6 +34,12 @@ class AdminController extends Controller
         $cities=City::all();
 
         return view('Admin.Tables.city',compact('cities'));
+    }
+    public function certiview()
+    {
+        $certificates=Certificate::all();
+
+        return view('Admin.Tables.certificate',compact('certificates'));
     }
     public function locationview()
     {

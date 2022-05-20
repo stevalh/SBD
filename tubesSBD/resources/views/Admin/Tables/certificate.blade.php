@@ -5,6 +5,7 @@
 
         <!-- Page Heading -->
 
+
         @if (session()->has('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
@@ -12,30 +13,36 @@
         </div>
     @endif
     
-
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
-            Vaccine Table
+            Certificate Table
         </div>
         <div class="mb-2">
-            <a href="{{ route('type') }}" class="btn btn-primary">Add</a>
+            <a href="{{ route('addlocationview') }}" class="btn btn-primary">Give Certificate</a>
         </div>
+
 
         <table class="table">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">Vaccine Name</th>
+                    <th scope="col">Owner</th>
+                    <th scope="col">Owner NIK</th>
+                    <th scope="col">Owner email</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($vaccines as $vaccine)
-                    <tr>
-                        <th scope="row">{{ $vaccine->id }}</th>
-                        <td>{{ $vaccine->vaccine_name }}</td>
-
-                    </tr>
+                @foreach ($certificates as $certi)
+                    
+                <tr>
+                    <td>{{ $certi->id }}</td>
+                    <td>{{ $certi-> }}</td>
+                    <td></td>
+                    <td></td>
+                </tr>
                 @endforeach
+                
+               
             </tbody>
         </table>
 

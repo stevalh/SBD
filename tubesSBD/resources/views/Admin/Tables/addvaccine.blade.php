@@ -26,7 +26,7 @@
                 @error('vaccine_name')
                
                     {{ $message }}
-                
+            </div>
             @enderror     
  
             <button type="submit" class="btn btn-primary">Create</button>

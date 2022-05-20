@@ -47,6 +47,17 @@
                         </div>
                     </div>
                 </div>
+
+
+                <div class="col-lg-4">
+                    <div class="card border-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">City</div>
+                        <div class="card-body text-dark">
+                            <h5 class="card-title">Total Types of Vaccine</h5>
+                            <p class="card-text">{{ $types }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
