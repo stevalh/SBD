@@ -10,6 +10,7 @@ use App\Models\Location;
 use App\Models\vaccine_type;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Data;
 
 
 class AdminController extends Controller
@@ -35,12 +36,26 @@ class AdminController extends Controller
 
         return view('Admin.Tables.city',compact('cities'));
     }
+
+
+
+
+    
     public function certiview()
     {
         $certificates=Certificate::all();
 
         return view('Admin.Tables.certificate',compact('certificates'));
     }
+
+
+
+
+
+
+
+
+
     public function locationview()
     {
         $locations=Location::all();
@@ -131,6 +146,60 @@ class AdminController extends Controller
             $vaccine->save();
 
             return redirect('/administrator/type')->with('success','Added new Types of Vaccine');
+
+    }
+
+
+
+    public function addcertiview()
+    {
+        $vaccines=vaccine_type::all();
+        return view('Admin.Tables.addcerti',compact('vaccines'));
+    }
+
+    public function addcerti(Request $request)
+    {
+      
+        $validate= $request->validate(
+            [
+                'name'=>'required|regex:/^[\pL\s\-]+$/u',
+                'NIK'=>'required|max:8|min:8',
+                'email'=>'required|email:dns',
+                'vaccine'=>'required',
+                
+            ],
+            [
+                'name.regex'=>'Only alphabet is allowed',
+                'NIK.max'=>'NIK contains 8 digits',
+                'NIK.min'=>'NIK contains 8 digits',
+                'email.email'=>'Email Format invalid'
+            ]     
+            );
+            
+            $data=DB::table('data')->where('NIK','=',$validate['NIK'])->first();
+            if(DB::table('data')->where('NIK','=',$validate['NIK'])->count() >0)
+            {
+                if($data->fname != $validate['name'])
+                {
+                    return redirect('/administrator/addcertificateview')->with('check',"NIK and name doesn't match");
+                }
+            }
+            else
+            {
+                return redirect('/administrator/addcertificateview')->with('check',"NIK and name doesn't match");
+            }
+
+            $user=DB::table('users')->where('email','=',$validate['email'])->first();
+
+            $certificates=new Certificate();
+            $certificates->admin_id =auth()->user()->id;
+            $certificates->owner_name=$validate['name'];
+            $certificates->owner_NIK=$validate['NIK'];
+            $certificates->user_id=$user->id;
+            $certificates->vaccine_id=$validate['vaccine'];
+            $certificates->save();
+
+            return redirect('/administrator/certi')->with('success','Certificate has been sent successfully');
 
     }
 }

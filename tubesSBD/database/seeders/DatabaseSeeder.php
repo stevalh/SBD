@@ -6,6 +6,7 @@ use App\Models\City;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Location;
+use App\Models\Data;
 
 class DatabaseSeeder extends Seeder
 {
@@ -93,6 +94,27 @@ class DatabaseSeeder extends Seeder
             'address'=>'Jl.Buah',
             'city_id'=>3,
            
+        ]);
+
+        Data::create([
+            'NIK'=>10000001,
+            'fname'=>"Kenzie Fubrianto"
+        ]);
+        Data::create([
+            'NIK'=>10000002,
+            'fname'=>"Ariyo Syahraza"
+        ]);
+        Data::create([
+            'NIK'=>10000003,
+            'fname'=>"Steven Valentino"
+        ]);
+        Data::create([
+            'NIK'=>10000004,
+            'fname'=>"Andre Gozali"
+        ]);
+        Data::create([
+            'NIK'=>10000005,
+            'fname'=>"Erick Lorus"
         ]);
         
     }

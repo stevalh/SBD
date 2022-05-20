@@ -28,9 +28,10 @@ return new class extends Migration
             // $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
             // $table->foreign('vaccine_id')->references('id')->on('vaccine_types')->onDelete('restrict');
           
-            $table->foreignId('admin_id')->constrained('admins');
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('vaccine_id')->constrained('vaccine_types');
+            $table->foreignId('admin_id');
+            $table->foreignId('user_id');
+            $table->foreignId('vaccine_id');
+            $table->timestamps();
           
           
            

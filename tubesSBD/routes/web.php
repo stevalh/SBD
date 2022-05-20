@@ -87,6 +87,7 @@ Route::group([
 
         Route::get('/addcertificateview','AdminController@addcertiview')->name('addcertiview');
         Route::post('/addcertificate','AdminController@addcerti')->name('addcertificate');
+        
         Route::view('/admin','Admin.data-admin')->name('admin');
     });
 });

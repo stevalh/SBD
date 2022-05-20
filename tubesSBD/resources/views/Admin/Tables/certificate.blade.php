@@ -18,7 +18,7 @@
             Certificate Table
         </div>
         <div class="mb-2">
-            <a href="{{ route('addlocationview') }}" class="btn btn-primary">Give Certificate</a>
+            <a href="{{ route('addcertiview') }}" class="btn btn-primary">Give Certificate</a>
         </div>
 
 
@@ -26,9 +26,12 @@
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">Id</th>
+                    
+                    <th scope="col">Admin</th>
                     <th scope="col">Owner</th>
                     <th scope="col">Owner NIK</th>
                     <th scope="col">Owner email</th>
+                    <th scope="col">Vaccine Type</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,9 +39,11 @@
                     
                 <tr>
                     <td>{{ $certi->id }}</td>
-                    <td>{{ $certi-> }}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ $certi->admin->name }}</td>
+                    <td>{{ $certi->owner_name }}</td>
+                    <td>{{ $certi->owner_NIK }}</td>
+                    <td>{{ $certi->user->email }}</td>
+                    <td>{{ $certi->vactype->vaccine_name }}</td>
                 </tr>
                 @endforeach
                 
