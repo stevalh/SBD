@@ -14,7 +14,7 @@ class Test extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class,'id');
+        return $this->belongsTo(User::class,'patient_id');
     }
     public function admin(){
         return $this->belongsTo(Admin::class);

@@ -92,6 +92,8 @@ Route::group([
         Route::get('/addtestview','AdminController@addtestview')->name('addtestview');
         Route::post('/addtest','AdminController@addtest')->name('addtest');
 
+        Route::post('/deletetest','AdminController@deletetest')->name('deletetest');
+
 
         Route::view('/admin','Admin.data-admin')->name('admin');
     });

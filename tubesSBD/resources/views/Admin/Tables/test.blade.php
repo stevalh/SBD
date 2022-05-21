@@ -12,6 +12,12 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
+        @if (session()->has('del'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('del') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
@@ -33,6 +39,7 @@
                     <th scope="col">Patient email</th>
                     <th scope="col">Result</th>
                     <th scope="col">Date of the Swab Test</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,6 +53,16 @@
                     <td>{{ $test->user->email }}</td>
                     <td>{{ $test->result }}</td>
                     <td>{{ $test->created_at }}</td>
+                    <td>
+                        <div class="text-center">
+                    <form method="POST" action="{{ route('deletetest') }}">
+                        @csrf
+                        <input hidden name="id" type="number" value="{{ $test->id }}">
+                        <button type="submit" class="btn btn-danger btn-sm"> <i class="fa fa-trash"></i>
+                        </button>
+                    </form>
+                    </div>
+                   </td>
                 </tr>
                 @endforeach
                 

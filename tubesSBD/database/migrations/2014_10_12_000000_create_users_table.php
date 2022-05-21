@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignId('NIK')->nullable();
             $table->unsignedInteger('OTP')->nullable();
             $table->string('token')->nullable();
+            $table->string('status')->default('negative');
             $table->timestamps();
             
             // $table->unsignedBigInteger('test_id')->nullable();

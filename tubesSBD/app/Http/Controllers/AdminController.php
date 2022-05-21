@@ -258,10 +258,17 @@ class AdminController extends Controller
             $test->patient_id=$user->id;
             $test->result=$validate['result'];
             $test->save();
-            //jika negative ubah status user
-            // if()
-
+            
+            
             return redirect('/administrator/test')->with('success','Test Result has been sent successfully');
 
+    }
+
+    public function deletetest(Request $request)
+    {
+        $data=$request->all();
+
+        DB::table('tests')->where('id','=',$data['id'])->delete();
+        return redirect('/administrator/test')->with('del','Deleted Successfuly');
     }
 }
