@@ -117,5 +117,5 @@ Route::get('/covid19-test', [CertificateController::class, 'index']);
 
 // Edit Profile
 Route::get('/editprofile', [ProfileController::class, 'edit'])->name('profile.edit');
-Route::put('/updateprofile', [ProfileController::class, 'update'])->name('profile.update');
-Route::resource('/editProfile', ProfileController::class);
+Route::post('/updateprofile', [ProfileController::class, 'update'])->name('profile.update');
+// Route::resource('/editProfile', ProfileController::class);

@@ -19,12 +19,7 @@
                                             <h6>Hi</h6>
                                         @endauth
                                         {{-- Profile Menu --}}
-                                        <div class="container">
-                                            @if (session()->has('message'))
-            <div class="alert alert-success " role="alert">
-                {{ session('message') }}
-            </div>
-        @endif
+                                       
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="profile-menu">
