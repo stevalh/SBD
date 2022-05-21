@@ -20,10 +20,16 @@
                                         @endauth
                                         {{-- Profile Menu --}}
                                         <div class="container">
+                                            @if (session()->has('message'))
+            <div class="alert alert-success " role="alert">
+                {{ session('message') }}
+            </div>
+        @endif
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="profile-menu">
                                                         <ul class="nav">
+                                                            <li><a href="{{ route('profile.edit') }}">Edit Profile</a></li>
                                                             <li><a href="#">COVID-19 Test</a></li>
                                                             <li><a href="#">Vaccination History</a></li>
                                                             <li><a href="#">Vaccine Certificate</a></li>

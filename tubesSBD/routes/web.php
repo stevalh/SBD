@@ -12,6 +12,7 @@ use App\Http\Controllers\CheckInOut;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\CovidTestController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -78,6 +79,7 @@ Route::group([
         Route::get('/location','AdminController@locationview')->name('location');
         Route::get('/type','AdminController@typeview')->name('vaccinetype');
         Route::view('/admin','Admin.data-admin')->name('admin');
+        
     });
 });
 
@@ -94,3 +96,8 @@ Route::view('/testadmin','Admin.index');
 
 // Vaccine
 Route::get('/covid19-test', [CertificateController::class, 'index']);
+
+// Edit Profile
+Route::get('/editprofile', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::put('/updateprofile', [ProfileController::class, 'update'])->name('profile.update');
+Route::resource('/editProfile', ProfileController::class);
