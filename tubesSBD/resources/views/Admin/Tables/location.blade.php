@@ -29,6 +29,7 @@
                     <th scope="col">Location Name</th>
                     <th scope="col">Address</th>
                     <th scope="col">City Name</th>
+                    <th scope="col">QR Code</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,6 +39,7 @@
                         <td>{{ $location->location_name }}</td>
                         <td>{{ $location->address }}</td>
                         <td>{{ $location->city->name }}</td>
+                       <td> <a href="{{ route('generate', $location->id) }}" class="btn btn-primary">Generate</a></td>
 
                     </tr>
                 @endforeach

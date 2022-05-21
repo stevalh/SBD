@@ -26,6 +26,9 @@
                         <li class="nav-item">
                             <a href="{{ route('admin.login') }}" class="nav-link">Login</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">Back</a>
+                        </li>
                     @else
                         @can('role', ['admin'])
                             <li class="nav-item">
