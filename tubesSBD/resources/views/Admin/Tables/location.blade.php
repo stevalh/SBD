@@ -4,12 +4,21 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
+
+
+        @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
             Location Table
         </div>
         <div class="mb-2">
-            <button type="button" class="btn btn-primary">Add City</button>
+            <a href="{{ route('addlocationview') }}" class="btn btn-primary">Add Location</a>
         </div>
 
 
@@ -18,6 +27,7 @@
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Location Name</th>
+                    <th scope="col">Address</th>
                     <th scope="col">City Name</th>
                 </tr>
             </thead>
@@ -26,6 +36,7 @@
                     <tr>
                         <th scope="row">{{ $location->id }}</th>
                         <td>{{ $location->location_name }}</td>
+                        <td>{{ $location->address }}</td>
                         <td>{{ $location->city->name }}</td>
 
                     </tr>

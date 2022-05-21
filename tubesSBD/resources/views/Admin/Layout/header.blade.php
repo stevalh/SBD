@@ -20,6 +20,7 @@
     <!-- Custom styles for this template-->
     <link href="/assets/css/sb-admin-2.min.css" rel="stylesheet">
 
+
 </head>
 
 <body id="page-top">
@@ -76,12 +77,12 @@
                     <span>Location</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="{{ route('certi') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Certificate</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="{{ route('test') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Test</span></a>
             </li>

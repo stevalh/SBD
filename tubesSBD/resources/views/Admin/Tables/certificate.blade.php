@@ -5,6 +5,7 @@
 
         <!-- Page Heading -->
 
+
         @if (session()->has('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
@@ -12,30 +13,43 @@
         </div>
     @endif
     
-
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
-            Vaccine Table
+            Certificate Table
         </div>
         <div class="mb-2">
-            <a href="{{ route('type') }}" class="btn btn-primary">Add</a>
+            <a href="{{ route('addcertiview') }}" class="btn btn-primary">Give Certificate</a>
         </div>
+
 
         <table class="table">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">Vaccine Name</th>
+                    
+                    <th scope="col">Admin</th>
+                    <th scope="col">Owner</th>
+                    <th scope="col">Owner NIK</th>
+                    <th scope="col">Owner email</th>
+                    <th scope="col">Vaccine Type</th>
+                    <th scope="col">Date of Doze</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($vaccines as $vaccine)
-                    <tr>
-                        <th scope="row">{{ $vaccine->id }}</th>
-                        <td>{{ $vaccine->name }}</td>
-
-                    </tr>
+                @foreach ($certificates as $certi)
+                    
+                <tr>
+                    <td>{{ $certi->id }}</td>
+                    <td>{{ $certi->admin->name }}</td>
+                    <td>{{ $certi->owner_name }}</td>
+                    <td>{{ $certi->owner_NIK }}</td>
+                    <td>{{ $certi->user->email }}</td>
+                    <td>{{ $certi->vactype->name }}</td>
+                    <td>{{ $certi->created_at }}</td>
+                </tr>
                 @endforeach
+                
+               
             </tbody>
         </table>
 

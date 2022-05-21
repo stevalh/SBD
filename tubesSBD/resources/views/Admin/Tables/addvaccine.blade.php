@@ -6,29 +6,30 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
-            Add City
+            Add New Type of Vaccine
 
         </div>
 
         <div class="mb-2">
-            <a href="{{ route('city') }}" class="btn btn-primary">Back</a>
+            <a href="{{ route('vaccinetype') }}" class="btn btn-primary">Back</a>
         </div>
 
 
-        <form method="POST" action="{{ route('addcity') }}">
+        <form method="POST" action="{{ route('addvaccine') }}">
             @csrf
             <div class="form-group" >
-                <label for="city">City Name</label>
-                <input type="text" class="form-control " id="city" name="name" >
+                <label for="city">Vaccine Name</label>
+                <input type="text" class="form-control " id="city" name="name" required>
             </div>
+
             <div class="row" style="color: red">
                 @error('name')
                
                     {{ $message }}
-                
-            @enderror      
             </div>
-            <button type="submit" class="btn btn-primary">Create a New City</button>
+            @enderror     
+ 
+            <button type="submit" class="btn btn-primary">Create</button>
         </form>
 
 

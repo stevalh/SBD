@@ -5,6 +5,7 @@
 
         <!-- Page Heading -->
 
+
         @if (session()->has('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
@@ -12,30 +13,43 @@
         </div>
     @endif
     
-
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
-            Vaccine Table
+            COVID Result Test Table
         </div>
         <div class="mb-2">
-            <a href="{{ route('type') }}" class="btn btn-primary">Add</a>
+            <a href="{{ route('addtestview') }}" class="btn btn-primary">Give Result</a>
         </div>
+
 
         <table class="table">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">Vaccine Name</th>
+                    
+                    <th scope="col">Admin</th>
+                    <th scope="col">Patien Name</th>
+                    <th scope="col">Patient NIK</th>
+                    <th scope="col">Patient email</th>
+                    <th scope="col">Result</th>
+                    <th scope="col">Date of the Swab Test</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($vaccines as $vaccine)
-                    <tr>
-                        <th scope="row">{{ $vaccine->id }}</th>
-                        <td>{{ $vaccine->name }}</td>
-
-                    </tr>
+                @foreach ($tests as $test)
+                    
+                <tr>
+                    <td>{{ $test->id }}</td>
+                    <td>{{ $test->admin->name }}</td>
+                    <td>{{ $test->patient_name }}</td>
+                    <td>{{ $test->patient_NIK }}</td>
+                    <td>{{ $test->user->email }}</td>
+                    <td>{{ $test->result }}</td>
+                    <td>{{ $test->created_at }}</td>
+                </tr>
                 @endforeach
+                
+               
             </tbody>
         </table>
 

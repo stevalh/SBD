@@ -13,19 +13,27 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tests', function (Blueprint $table) {
+    
+        Schema::create('certificates', function (Blueprint $table) {
+
             $table->id();
             $table->unsignedBigInteger('admin_id');
             $table->foreign('admin_id')->references('id')->on('admins')->onDelete('restrict');
-            $table->unsignedBigInteger('patient_id');
-            $table->foreign('patient_id')->references('id')->on('users')->onDelete('restrict');
-            $table->string('result');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
+
+            $table->unsignedBigInteger('vaccine_id');
+            $table->foreign('vaccine_id')->references('id')->on('vaccine_types')->onDelete('restrict');
             
-            
-            $table->string('patient_name');
-            $table->unsignedBigInteger('patient_NIK');
-            
+            $table->string('owner_name');
+            $table->unsignedBigInteger('owner_NIK');
+
+          
+           
             $table->timestamps();
+          
+          
+           
         });
     }
 
@@ -36,6 +44,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tests');
+        Schema::dropIfExists('certificates');
     }
 };

@@ -8,7 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Location;
-use App\Models\history;
+
+use App\Models\Certificate;
 
 class User extends Authenticatable
 {
@@ -52,7 +53,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Location::class,'histories','users_id','locations_id')->withTimestamps()->withPivot(['check_out']);
     }
 
-   
+   public function certificates()
+   {
+       return $this->hasMany(Certificate::class);
+   }
    
 
 
