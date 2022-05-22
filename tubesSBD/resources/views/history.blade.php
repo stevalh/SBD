@@ -20,12 +20,10 @@
                             <div>
                                 <div class="row p-4 no-gutters align-items-center">
                                     <div class="col-sm-12 col-md-6">
-
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <ul class="list-inline dl mb-0 float-left float-md-right">
                                             <a href="/app" class="btn btn-primary">Back</a>
-
                                         </ul>
                                     </div>
                                 </div>
@@ -35,46 +33,36 @@
                                         <tbody>
 
                                             @foreach ($data->locations as $location)
-                                                <!-- row -->
-                                                <tr>
-                                                    <!-- label -->
-                                                    <td class="pl-3">
-                                                        {{-- <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="cst1" />
-                                                    <label class="custom-control-label" for="cst1">&nbsp;</label>
-                                                </div> --}}
-                                                    </td>
-                                                    <!-- star -->
-                                                    {{-- <td><i class="fa fa-star text-warning"></i></td> --}}
-                                                    <td>
-                                                        <span
-                                                            class="mb-0 text-muted">{{ $location->location_name }}</span>
-                                                    </td>
-                                                    <!-- Message -->
-                                                    <td>
-
-                                                        <span
-                                                            class="badge badge-pill text-white font-medium badge-danger mr-2">Address</span>
-                                                        <span class="text-dark">{{ $location->address }}</span>
-
-                                                    </td>
-                                                    <!-- Attachment -->
-
-                                                    <!-- Time -->
-                                                    <td class="text-muted">{{ $location->pivot->created_at }}</td>
-                                                </tr>
+                                            <!-- row -->
+                                            <tr>
+                                                <!-- label -->
+                                                <td class="pl-3">
+                                                    {{-- <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="cst1" />
+                                                        <label class="custom-control-label" for="cst1">&nbsp;</label>
+                                                    </div> --}}
+                                                </td>
+                                                <!-- star -->
+                                                {{-- <td><i class="fa fa-star text-warning"></i></td> --}}
+                                                <td>
+                                                    <span class="mb-0 text-muted">{{ $location->location_name }}</span>
+                                                </td>
+                                                <!-- Message -->
+                                                <td>
+                                                    <span
+                                                        class="badge badge-pill text-white font-medium badge-danger mr-2">Address</span>
+                                                    <span class="text-dark">{{ $location->address }}</span>
+                                                </td>
+                                                <!-- Attachment -->
+                                                <!-- Time -->
+                                                <td class="text-muted">{{ $location->pivot->created_at }}</td>
+                                            </tr>
                                             @endforeach
-
-
-
-
-
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

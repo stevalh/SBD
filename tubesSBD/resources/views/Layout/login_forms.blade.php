@@ -1,14 +1,14 @@
 @if (session()->has('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{ session('success') }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 @endif
 @if (session()->has('loginError'))
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{ session('loginError') }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ session('loginError') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 @endif
 
 <div class="container">
@@ -28,16 +28,15 @@
                     <input class="email input100  @error('email') is-invalid @enderror" type="email"
                         value="{{ old('email') }}" name="email" placeholder="Email" required>
                     @error('email')
-                        <div class="email-validation invalid-feedback">
-                            {{ $message }}
-                        </div>
+                    <div class="email-validation invalid-feedback">
+                        {{ $message }}
+                    </div>
                     @enderror
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                     </span>
                 </div>
-
                 <div class="container-login100-form-btn">
                     <button class="login100-form-btn">
                         Login

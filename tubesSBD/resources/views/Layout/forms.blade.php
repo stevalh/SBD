@@ -1,14 +1,14 @@
 @if (session()->has('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{ session('success') }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 @endif
 @if (session()->has('loginError'))
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{ session('loginError') }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ session('loginError') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 @endif
 <div class="place" id="place">
     <div class="form-place sign-up-place">
@@ -18,16 +18,16 @@
             <input type="text" name="fname" value="{{ old('fname') }}"
                 class="fname form-control @error('fname') is-invalid @enderror" placeholder="Full Name" required />
             @error('fname')
-                <div class="fname-validation invalid-feedback">
-                    {{ $message }}
-                </div>
+            <div class="fname-validation invalid-feedback">
+                {{ $message }}
+            </div>
             @enderror
             <input type="email" name="email" value="{{ old('email') }}" id="email"
                 class="fname form-control  @error('email') is-invalid @enderror" placeholder="Email" required />
             @error('email')
-                <div class="email-validation invalid-feedback">
-                    {{ $message }}
-                </div>
+            <div class="email-validation invalid-feedback">
+                {{ $message }}
+            </div>
             @enderror
 
             <button>Sign Up</button>
@@ -41,9 +41,9 @@
             <input type="email" name="email" value="{{ old('email') }}" id="email"
                 class="email form-control  @error('email') is-invalid @enderror" placeholder="Email" required />
             @error('email')
-                <div class="email-validation invalid-feedback">
-                    {{ $message }}
-                </div>
+            <div class="email-validation invalid-feedback">
+                {{ $message }}
+            </div>
             @enderror
             <button>Sign In</button>
         </form>
@@ -63,10 +63,7 @@
             </div>
         </div>
     </div>
-
 </div>
-
-
 
 <script>
     jQuery(document).ready(function() {

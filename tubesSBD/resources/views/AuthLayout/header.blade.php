@@ -3,14 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Verification Link | TraceTogether</title>
+    <title>Verification Link | Tracer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="./style.css">
     <style>
         * {
             margin: 0;
             padding: 0;
-
         }
 
         body {
@@ -29,7 +28,6 @@
         .container img {
             width: 350px;
         }
-
     </style>
 </head>
 
