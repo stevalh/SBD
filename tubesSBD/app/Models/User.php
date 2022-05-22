@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Location;
+use App\Models\Test;
 
 use App\Models\Certificate;
 
@@ -58,6 +59,10 @@ class User extends Authenticatable
        return $this->hasMany(Certificate::class);
    }
    
+   public function tests()
+   {
+       return $this->hasmany(Test::class);
+   }
 
 
 }
