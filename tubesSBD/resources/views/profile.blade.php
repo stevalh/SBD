@@ -25,7 +25,7 @@
                                                 <ul class="nav">
                                                     <li><a href="{{ route('profile.edit') }}">Edit Profile</a></li>
                                                     <li><a href="#">COVID-19 Test</a></li>
-                                                    <li><a href="#">Vaccine Certificate</a></li>
+                                                    <li><a href="#certificate">Vaccine Certificate</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -47,5 +47,130 @@
 </div>
 {{-- End Profile --}}
 
-<script></script>
-@endsection
+{{-- Certificate --}}
+<div id="certificate" class="services section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <h6>Certificate</h6>
+                    <h4>Your Vaccination <em>Certificate</em></h4>
+                    <div class="line-dec"></div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="naccs">
+                    <div class="grid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="menu">
+                                    <div>
+                                        <div class="first-thumb active">
+                                            <span class="icon"><img src="assets/images/service-icon-03.png"
+                                                    alt=""></span>
+                                            Certificate
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="last-thumb">
+                                            <span class="icon"><img src="assets/images/service-icon-03.png"
+                                                    alt=""></span>
+                                            Cars
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <ul class="nacc">
+                                        <li class="active">
+                                            <div>
+                                                <div class="thumb">
+                                                    <div class="row">
+                                                        <div class="col-lg-6 align-self-center">
+                                                            <div class="left-text">
+                                                                <h4>Car Re-search &amp; Transport</h4>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                    elit,
+                                                                    sedr do eiusmod deis tempor
+                                                                    incididunt ut labore et dolore kengan darwin doerski
+                                                                    token.
+                                                                    dover lipsum lorem and the others.</p>
+                                                                <div class="ticks-list"><span><i
+                                                                            class="fa fa-check"></i>
+                                                                        Optimized Template</span>
+                                                                    <span><i class="fa fa-check"></i> Data Info</span>
+                                                                    <span><i class="fa fa-check"></i>
+                                                                        SEO Analysis</span>
+                                                                    <span><i class="fa fa-check"></i> Data Info</span>
+                                                                    <span><i class="fa fa-check"></i>
+                                                                        SEO Analysis</span> <span><i
+                                                                            class="fa fa-check"></i> Optimized
+                                                                        Template</span>
+                                                                </div>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                    elit,
+                                                                    sedr do eiusmod deis tempor
+                                                                    incididunt.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 align-self-center">
+                                                            <div class="right-image">
+                                                                <img src="assets/images/services-image-03.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <div class="thumb">
+                                                    <div class="row">
+                                                        <div class="col-lg-6 align-self-center">
+                                                            <div class="left-text">
+                                                                <h4>Car Re-search &amp; Transport</h4>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                    elit,
+                                                                    sedr do eiusmod deis tempor
+                                                                    incididunt ut labore et dolore kengan darwin doerski
+                                                                    token.
+                                                                    dover lipsum lorem and the others.</p>
+                                                                <div class="ticks-list"><span><i
+                                                                            class="fa fa-check"></i>
+                                                                        Optimized Template</span>
+                                                                    <span><i class="fa fa-check"></i> Data Info</span>
+                                                                    <span><i class="fa fa-check"></i>
+                                                                        SEO Analysis</span>
+                                                                    <span><i class="fa fa-check"></i> Data Info</span>
+                                                                    <span><i class="fa fa-check"></i>
+                                                                        SEO Analysis</span> <span><i
+                                                                            class="fa fa-check"></i> Optimized
+                                                                        Template</span>
+                                                                </div>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                    elit,
+                                                                    sedr do eiusmod deis tempor
+                                                                    incididunt.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 align-self-center">
+                                                            <div class="right-image">
+                                                                <img src="assets/images/services-image-03.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- End Certificate --}}
+
+    <script></script>
+    @endsection
