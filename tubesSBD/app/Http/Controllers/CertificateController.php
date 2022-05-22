@@ -14,9 +14,13 @@ class CertificateController extends Controller
      */
     public function index()
     {
-        return view('Certificate.certivac');
+        return view('certificate');
     }
-
+    public function layout()
+    {
+        return view('test');
+    }
+        
     /**
      * Show the form for creating a new resource.
      *

@@ -1,6 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('Certificate.certivac')
 
+@section('certificate')
+   
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +15,9 @@
             padding: 0;
         }
 
-        .container {
+        .box {
             width: 800px;
             height: 1000px;
-            border: 1px black solid;
             margin: 5px;
             padding: 5px;
             display: grid;
@@ -109,7 +110,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="box">
         <header>INTERNATIONAL VACCINE CERTIFICATE COVID-19 </header>
         <div class="gambar">
 
@@ -153,3 +154,4 @@
 </body>
 
 </html>
+@endsection

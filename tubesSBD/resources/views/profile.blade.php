@@ -24,8 +24,8 @@
                                             <div class="profile-menu">
                                                 <ul class="nav">
                                                     <li><a href="{{ route('profile.edit') }}">Edit Profile</a></li>
-                                                    <li><a href="#">COVID-19 Test</a></li>
-                                                    <li><a href="#certificate">Vaccine Certificate</a></li>
+                                                    <li><a href="/test">COVID-19 Test</a></li>
+                                                    <li><a href="/certificate">Vaccine Certificate</a></li>
                                                 </ul>
                                             </div>
                                         </div>
