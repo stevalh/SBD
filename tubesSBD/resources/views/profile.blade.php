@@ -65,17 +65,17 @@
                             <div class="col-lg-12">
                                 <div class="menu">
                                     <div>
-                                        <div class="first-thumb active">
+                                        <div class="thumb active">
                                             <span class="icon"><img src="assets/images/service-icon-03.png"
                                                     alt=""></span>
-                                            Certificate
+                                            Vaccination Certificate 1
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="last-thumb">
+                                        <div class="thumb">
                                             <span class="icon"><img src="assets/images/service-icon-03.png"
                                                     alt=""></span>
-                                            Cars
+                                            Vaccination Certificate 2
                                         </div>
                                     </div>
                                 </div>
@@ -171,6 +171,4 @@
         </div>
     </div>
     {{-- End Certificate --}}
-
-    <script></script>
     @endsection
