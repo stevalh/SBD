@@ -87,34 +87,14 @@
                                                     <div class="row">
                                                         <div class="col-lg-6 align-self-center">
                                                             <div class="left-text">
-                                                                <h4>Car Re-search &amp; Transport</h4>
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                                    elit,
-                                                                    sedr do eiusmod deis tempor
-                                                                    incididunt ut labore et dolore kengan darwin doerski
-                                                                    token.
-                                                                    dover lipsum lorem and the others.</p>
-                                                                <div class="ticks-list"><span><i
-                                                                            class="fa fa-check"></i>
-                                                                        Optimized Template</span>
-                                                                    <span><i class="fa fa-check"></i> Data Info</span>
-                                                                    <span><i class="fa fa-check"></i>
-                                                                        SEO Analysis</span>
-                                                                    <span><i class="fa fa-check"></i> Data Info</span>
-                                                                    <span><i class="fa fa-check"></i>
-                                                                        SEO Analysis</span> <span><i
-                                                                            class="fa fa-check"></i> Optimized
-                                                                        Template</span>
-                                                                </div>
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                                    elit,
-                                                                    sedr do eiusmod deis tempor
-                                                                    incididunt.</p>
+                                                                <h4>First Vaccine</h4>
+                                                                <p>Name : </p>
+                                                                <p>Vaccine Date : </p>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6 align-self-center">
                                                             <div class="right-image">
-                                                                <img src="assets/images/services-image-03.jpg" alt="">
+                                                                <img src="assets/images/services-image-5.png" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -127,34 +107,14 @@
                                                     <div class="row">
                                                         <div class="col-lg-6 align-self-center">
                                                             <div class="left-text">
-                                                                <h4>Car Re-search &amp; Transport</h4>
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                                    elit,
-                                                                    sedr do eiusmod deis tempor
-                                                                    incididunt ut labore et dolore kengan darwin doerski
-                                                                    token.
-                                                                    dover lipsum lorem and the others.</p>
-                                                                <div class="ticks-list"><span><i
-                                                                            class="fa fa-check"></i>
-                                                                        Optimized Template</span>
-                                                                    <span><i class="fa fa-check"></i> Data Info</span>
-                                                                    <span><i class="fa fa-check"></i>
-                                                                        SEO Analysis</span>
-                                                                    <span><i class="fa fa-check"></i> Data Info</span>
-                                                                    <span><i class="fa fa-check"></i>
-                                                                        SEO Analysis</span> <span><i
-                                                                            class="fa fa-check"></i> Optimized
-                                                                        Template</span>
-                                                                </div>
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                                    elit,
-                                                                    sedr do eiusmod deis tempor
-                                                                    incididunt.</p>
+                                                                <h4>Second Vaccine</h4>
+                                                                <p>Name : </p>
+                                                                <p>Vaccine Date : </p>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6 align-self-center">
                                                             <div class="right-image">
-                                                                <img src="assets/images/services-image-03.jpg" alt="">
+                                                                <img src="assets/images/services-image-5.png" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
