@@ -1324,18 +1324,6 @@ Services Style
   position: relative;
 }
 
-.services:after {
-  content: '';
-  background-image: url(../images/services-left-dec.jpg);
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 0;
-  top: -50px;
-  width: 786px;
-  height: 1217px;
-  z-index: 0;
-}
-
 .services:before {
   content: '';
   background-image: url(../images/services-right-dec.jpg);
