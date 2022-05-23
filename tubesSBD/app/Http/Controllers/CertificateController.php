@@ -17,10 +17,6 @@ class CertificateController extends Controller
     {
         return view('certificate');
     }
-    public function layout()
-    {
-        return view('test');
-    }
 
     // public function certiyo() jangan dihapus
     // {

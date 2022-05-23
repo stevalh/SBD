@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class CovidTestController extends Controller
 {
@@ -14,7 +15,11 @@ class CovidTestController extends Controller
      */
     public function index()
     {
-        //
+        
+        $user = User::findorFail(auth()->user()->id);
+        $test = $user->test->first();
+        return view('test', compact('test'));
+        
     }
 
     /**

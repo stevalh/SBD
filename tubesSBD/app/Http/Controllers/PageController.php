@@ -8,7 +8,7 @@ class PageController extends Controller
 {
     public function Home()
     {
-        return view('index');
+        return view ('index');
     }
     public function AppPage()
     {

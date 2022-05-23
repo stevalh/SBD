@@ -112,8 +112,8 @@ Route::get('/certificate', [CertificateController::class, 'index']);
 Route::view('/testadmin','Admin.index');
  
 
-// Vaccine
-Route::get('/test', [CertificateController::class, 'layout']);
+// covid test
+Route::get('/test', [CovidTestController::class, 'index']);
 
 // Edit Profile
 Route::get('/editprofile', [ProfileController::class, 'edit'])->name('profile.edit');

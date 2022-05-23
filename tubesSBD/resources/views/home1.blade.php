@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="col-lg-5">
                                     <div class="border-first-button scroll-to-section">
-                                        <a href="#">Check Your COVID-19 Test</a>
+                                        <a href="/test">Check Your COVID-19 Test</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7">

@@ -59,9 +59,10 @@ class User extends Authenticatable
        return $this->hasMany(Certificate::class);
    }
    
-   public function tests()
+   public function test()
    {
-       return $this->hasmany(Test::class);
+       
+       return $this->hasmany(Test::class,'patient_id')->orderBy('created_at','DESC');
    }
 
 
