@@ -15,19 +15,15 @@ class CertificateController extends Controller
      */
     public function index()
     {
-        return view('certificate');
+        $user=User::findorfail(auth()->user()->id);
+        return view('certificate',compact('user'));
     }
     public function layout()
     {
         return view('test');
     }
 
-    // public function certiyo() jangan dihapus
-    // {
-    //     $user=User::findorfail(auth()->user()->id);
-    //     return view('',compact($user));
-
-    // }
+    
         
     
 }
