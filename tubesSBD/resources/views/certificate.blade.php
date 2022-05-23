@@ -14,6 +14,11 @@
                     <div class="line-dec"></div>
                 </div>
             </div>
+                <?php
+                $i=1;
+                ?>
+            @foreach ($user->certificates as $certi)
+            
             <div class="col-lg-12">
                 <ul class="nacc">
                     <li class="active">
@@ -21,11 +26,11 @@
                             <div class="row">
                                 <div class="col-lg-6 align-self-center">
                                     <div class="left-text">
-                                        <h4 style="margin-bottom: 10px">#1 Vaccine</h4>
-                                        <p>Name : <br>
-                                            NIK : <br>
-                                            Date : <br>
-                                            Vaccine Type : </p>
+                                        <h4 style="margin-bottom: 10px">#{{ $i++ }} Vaccine</h4>
+                                        <p>Name :{{ $certi->owner_name }} <br>
+                                            NIK :{{ $certi->owner_NIK }} <br>
+                                            Date :{{ $certi->created_at }} <br>
+                                            Vaccine Type :{{ $certi->vactype->name }} </p>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 align-self-center">
@@ -39,6 +44,8 @@
 
                 </ul>
             </div>
+          
+            @endforeach
         </div>
     </div>
 </div>
