@@ -19,6 +19,7 @@
                     <li class="active">
                         <div>
                             <div class="row">
+                                @if($test)
                                 {{-- @auth
                                     <h6>Hi, {{ auth()->user()->fname }}</h6>
                                     @else
@@ -44,6 +45,7 @@
                                 </div>
                             
                             </div>
+                            @endif
                         </div>
                     </li>
 

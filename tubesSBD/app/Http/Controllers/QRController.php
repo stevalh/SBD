@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Location;
 use Illuminate\Http\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use App\Models\User;
 
 
 
@@ -11,6 +12,17 @@ class QRController extends Controller
 {
     public function index()
     {
+        //Check
+        $user=User::findorFail(auth()->user()->id);
+        $test = $user->test->first();
+        if($test)
+        {
+
+            if($test->result == "positive")
+            {
+                return redirect('/app')->with('fail',"Can't use scan (User status : $test->result)");
+            }
+        }
         return view('Qrcode.qrcode-scan');
     }
 
