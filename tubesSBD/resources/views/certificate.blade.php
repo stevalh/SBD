@@ -9,7 +9,7 @@
                     <h6>Certificate</h6>
                     <h4>Your Vaccination <em>Certificate</em></h4>
                     <h4>
-                        <a class="" href="/app" style="color: #ff00dd">Back to Home</a>
+                        <button style="color: #ff00dd"><a class="" href="/app" style="color: #ebebeb">Back to Home</a></button>
                     </h4>
                     <div class="line-dec"></div>
                 </div>
@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="col-lg-6 align-self-center">
                                     <div class="right-image">
-                                        <img src="assets/images/services-image-5.png" alt="">
+                                        <img src="assets/images/medal.png" style= "max-width: 70%" alt="">
                                     </div>
                                 </div>
                             </div>
