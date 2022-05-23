@@ -1326,7 +1326,6 @@ Services Style
 
 .services:before {
   content: '';
-  background-image: url(../images/services-right-dec.jpg);
   background-repeat: no-repeat;
   position: absolute;
   right: 0;

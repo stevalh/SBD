@@ -18,7 +18,6 @@
                 $i=1;
                 ?>
             @foreach ($user->certificates as $certi)
-            
             <div class="col-lg-12">
                 <ul class="nacc">
                     <li class="active">
@@ -41,10 +40,8 @@
                             </div>
                         </div>
                     </li>
-
                 </ul>
             </div>
-          
             @endforeach
         </div>
     </div>

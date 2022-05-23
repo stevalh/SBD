@@ -25,17 +25,13 @@
                                     @else
                                     <h6>Hi</h6>
                                     @endauth --}}
-                                
                                 <div class="col-lg-6 align-self-center">
                                     <div class="left-text">
-                        
-                                            <h4 style="margin-bottom: 10px">Result Test Covid-19 </h4> 
+                                            <h4 style="margin-bottom: 10px">Result Test Covid-19 </h4>
                                         <p>Name : {{ $test -> patient_name }}<br>
                                             NIK : {{ $test -> patient_NIK }}<br>
                                             Date : {{ $test -> created_at }}<br>
                                             Result : {{ $test -> result}}</p>
-                                        
-                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-6 align-self-center">
@@ -43,12 +39,10 @@
                                         <img src="assets/images/services-image-5.png" alt="" style="color: #ff00dd">
                                     </div>
                                 </div>
-                            
                             </div>
                             @endif
                         </div>
                     </li>
-
                 </ul>
             </div>
         </div>
