@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="col-lg-7">
                                     <div class="border-first-button scroll-to-section">
-                                        <a href="/profile#certificate">Check Your Vaccination Certificate</a>
+                                        <a href="/certificate">Check Your Vaccination Certificate</a>
                                     </div>
                                 </div>
                             </div>
