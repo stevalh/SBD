@@ -19,11 +19,71 @@
                             <div class="row">
                                 <div class="col-lg-6 align-self-center">
                                     <div class="left-text">
-                                        <h4>#1 Vaccine</h4>
-                                        <p>Name : </p>
-                                        <p>NIK : </p>
-                                        <p>Date : </p>
-                                        <p>Vaccine Type : </p>
+                                        <h4 style="margin-bottom: 10px">#1 Vaccine</h4>
+                                        <p>Name : <br>
+                                            NIK : <br>
+                                            Date : <br>
+                                            Vaccine Type : </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 align-self-center">
+                                    <div class="right-image">
+                                        <img src="assets/images/services-image-5.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <div>
+                            <div class="row">
+                                <div class="col-lg-6 align-self-center">
+                                    <div class="left-text">
+                                        <h4 style="margin-bottom: 10px">#2 Vaccine</h4>
+                                        <p>Name : <br>
+                                            NIK : <br>
+                                            Date : <br>
+                                            Vaccine Type : </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 align-self-center">
+                                    <div class="right-image">
+                                        <img src="assets/images/services-image-5.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <div>
+                            <div class="row">
+                                <div class="col-lg-6 align-self-center">
+                                    <div class="left-text">
+                                        <h4 style="margin-bottom: 10px">#3 Vaccine</h4>
+                                        <p>Name : <br>
+                                            NIK : <br>
+                                            Date : <br>
+                                            Vaccine Type : </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 align-self-center">
+                                    <div class="right-image">
+                                        <img src="assets/images/services-image-5.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <div>
+                            <div class="row">
+                                <div class="col-lg-6 align-self-center">
+                                    <div class="left-text">
+                                        <h4 style="margin-bottom: 10px">#4 Vaccine</h4>
+                                        <p>Name : <br>
+                                            NIK : <br>
+                                            Date : <br>
+                                            Vaccine Type : </p>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 align-self-center">
