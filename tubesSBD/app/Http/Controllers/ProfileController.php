@@ -35,7 +35,7 @@ class ProfileController extends Controller
          SELECT * FROM data WHERE (NIK = $validate['NIK'] ) ;
          SELECT COUNT(*) FROM data WHERE NIK =$validate['NIK];
         */
-        $data=DB::table('data')->where('NIK','=',$validate['NIK']);
+        $data=DB::table('data')->where('NIK','=',$validate['NIK'])->get();
             if(DB::table('data')->where('NIK','=',$validate['NIK'])->count() >0)
             {
                 if($data->fname != $validate['fname'])
