@@ -20,6 +20,14 @@ return new class extends Migration
             $table->foreignId('city_id');
          
         });
+        /**
+         * CREATE TABLE locations(
+         * id INT AUTO_INCREMENT PRIMARY_KEY,
+         * location_name VARCHAR(255) NOT NULL,
+         * address VARCHAR(255) NOT NULL,
+         * city_id INT FOREIGN_KEY REFERENCES cities(id)
+         *);
+         */
     }
 
     /**

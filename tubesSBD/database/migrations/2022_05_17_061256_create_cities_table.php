@@ -18,6 +18,13 @@ return new class extends Migration
             $table->string('name');
             
         });
+        /*
+        CREATE TABLE cities(
+            id INT AUTO_INCREMENT PRIMARY_KEY,
+            name VARCHAR(255) NOT NULL
+        );
+
+        */
     }
 
     /**

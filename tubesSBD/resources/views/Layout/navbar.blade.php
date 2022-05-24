@@ -34,8 +34,7 @@
             </nav>
             @if (Session::has('location'))
             <div class="alert alert-info" role="alert">
-                <h5> {{ Session::get('location')->location_name }}</h5><a href='/checkview/{{ Session::get('
-                    location')->id }}' class="btn btn-primary">Checkout</a>
+                <h5> {{ Session::get('location')->location_name }}</h5><a href='/checkview/{{ Session::get('location')->id }}' class="btn btn-primary">Checkout</a>
             </div>
             @endif
             @if (session()->has('success'))

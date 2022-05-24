@@ -23,7 +23,7 @@ class RegisterController extends Controller
                 
                 'fname' => 'required|regex:/^[\pL\s\-]+$/u',
                 'email' => 'required|email:rfc,dns|unique:users|email',
-                // 'NIK'=>'required|min:8|max:8'
+               
             ],
             [
                 'fname.required'=>'Name cannot be empty',
@@ -31,17 +31,19 @@ class RegisterController extends Controller
                 'email.required'=>"Email cannot be empty",
                 'email.email'=>'Email is Not Valid',
                 'email.unique'=>"This email address is registered",
-                // 'NIK.min:8'=>'NIK invalid',
-                // 'NIK.max:8'=>'NIK invalid'
+               
             ]
         );
   
       
         User::create($validatedData);
+        /*
+        INSERT INTO users(fname,email)
+        VALUES(fname,email);
+        */
         
         return redirect('/')->with('success', 'Registration successfull ! Please Login'); 
-        // $request->session()->flash('success','Registration successfull ! Please Login');
-        // return redirect('/');
+        
        
     }
 }

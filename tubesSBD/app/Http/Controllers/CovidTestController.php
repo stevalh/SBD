@@ -19,7 +19,16 @@ class CovidTestController extends Controller
         $user = User::findorFail(auth()->user()->id);
         $test = $user->test->first();
         return view('test', compact('test'));
-        
+        /*
+        SELECT* FROM users WHERE id = auth()->user()->id;
+
+        SELECT*FROM tests 
+            WHERE user_id = auth()->user()->id 
+            ORDER BY created_at DESC
+            LIMIT 1;
+        //Mengambil satu baris hasil test terbaru yang dimiliki oleh user yang memiliki relasi ke tests
+
+        */
     }
 
     /**

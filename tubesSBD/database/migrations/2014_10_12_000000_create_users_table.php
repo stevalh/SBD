@@ -17,17 +17,24 @@ return new class extends Migration
             $table->id();
             $table->string('fname');
             $table->string('email')->unique();
-            $table->foreignId('NIK')->nullable();
-            $table->unsignedInteger('OTP')->nullable();
+            $table->unsignedBigInteger('NIK')->nullable();
             $table->string('token')->nullable();
-            $table->string('status')->default('negative');
             $table->timestamps();
-            
-            // $table->unsignedBigInteger('test_id')->nullable();
-            // $table->unsignedBigInteger('vaccine_id')->nullable();
         
         });
     }
+    /*
+    CREATE TABLE users(
+        id INT AUTO_INCREMENT PRIMARY_KEY,
+        fname VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        NIK INT ,
+        token VARCHAR(255)
+    );
+    
+    */
+
+
 
     /**
      * Reverse the migrations.

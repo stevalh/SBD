@@ -19,6 +19,9 @@ class CertificateController extends Controller
         return view('certificate',compact('user'));
     }
 
+    /*
+    SELECT * FROM users WHERE id = auth()->user()->id
+    */
     
         
     

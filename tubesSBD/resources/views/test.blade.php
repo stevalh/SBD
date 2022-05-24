@@ -20,11 +20,6 @@
                         <div>
                             <div class="row">
                                 @if($test)
-                                {{-- @auth
-                                    <h6>Hi, {{ auth()->user()->fname }}</h6>
-                                    @else
-                                    <h6>Hi</h6>
-                                    @endauth --}}
                                 
                                 <div class="col-lg-6 align-self-center">
                                     <div class="left-text">
@@ -37,6 +32,10 @@
                                         
                                         
                                     </div>
+                                    {{-- SELECT tests.patient_name,tests.patient_NIK,tests.created_at,tests.result FROM tests
+                                    WHERE tests.user_id = auth()->user()->id
+                                    ORDER BY tests.created_at DESC
+                                    LIMIT 1; --}}
                                 </div>
                                 <div class="col-lg-6 align-self-center">
                                     <div class="right-image">

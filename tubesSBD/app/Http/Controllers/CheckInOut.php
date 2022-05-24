@@ -13,10 +13,7 @@ class CheckInOut extends Controller
 {
     public function checkin($location_id)
     {
-        // if(auth()->user()->certificates->count <=0 || auth()->user()->test->hasil =='negative' ) // bikin relasi user dengan certi sama test
-        // {
-        //     redirect('/notAllowed');
-        // }
+   
         if(Session::has('check'))
         {
            return  redirect('/');
@@ -26,27 +23,51 @@ class CheckInOut extends Controller
         $user =User::find(auth()->user()->id);
         $location->users()->attach($user);
 
+        /*
+        SELECT * FROM locations WHERE id = $location_id;
+        SELECT * FROM users WHERE id = auth()->user()->id;
+        INSERT INTO histories (locations_id,users_id)
+            VALUES($location,$user);       
+        */
+
         Session::put('location',$location);
       return redirect('/checksuccess/'.$location_id)->with('success','Check-in success !!');
     }
 
     public function checksuccess($location_id)
     {
+        //SESUAI dengan pivot table yang dibentuk(histories) dimana relasi antara locations
+        //dan users adalah many to many
         $data=Location::with('users')->get()->find($location_id);
         return view('Qrcode.success',compact('data'));
+        /*
+            SELECT * FROM locations WHERE id = $location_id;
+            SELECT * FROM users;
+        */
     }
 
     public function checkout($location_id)
     {
         if(Session::has('location'))
         {
+            //SESUAI dengan pivot table yang dibentuk(histories) dimana relasi antara locations
+            //dan users adalah many to many
             $data=Location::with('users')->get()->find($location_id);
+            /*
+          
+        */
             session()->forget('location');
             foreach($data->users as $user)
             {
+                
                 if($user->fname == auth()->user()->fname && $user->pivot->check_out == false)
                 {
                    DB::table('histories')->where('locations_id','=',$data->id)->where('users_id','=',$user->id)->update(['check_out'=>true]);
+                   /*
+                  
+                    UPDATE histories SET check_out = true 
+                        WHERE (locations_id = $data->id AND users_id = $user->id AND check_out = false);
+                   */
                 }
             }
             return redirect('/app')->with('success','Check Out success !!');
@@ -59,5 +80,9 @@ class CheckInOut extends Controller
         $data=Location::with('users')->get()->find($location_id);
 
         return view('Qrcode.ticket',compact('data'));
+        /*
+            SELECT * FROM locations WHERE id = $location_id;
+            SELECT * FROM users;
+        */
     }
 }

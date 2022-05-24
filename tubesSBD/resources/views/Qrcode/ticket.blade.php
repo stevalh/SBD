@@ -18,7 +18,7 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">{{ $data->location_name }}</h5>
-
+            
             <p class="card-text">User : {{ auth()->user()->fname }}</p>
             <p class="card-text">Address : {{ $data->address }}</p>
             <p class="card-text">City :{{ $data->city->name }}</p>

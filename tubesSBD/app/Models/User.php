@@ -54,10 +54,15 @@ class User extends Authenticatable
         return $this->belongsToMany(Location::class,'histories','users_id','locations_id')->withTimestamps()->withPivot(['check_out']);
     }
 
+
+
    public function certificates()
    {
        return $this->hasMany(Certificate::class);
    }
+
+
+   
    
    public function test()
    {

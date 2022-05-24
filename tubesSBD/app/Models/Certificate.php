@@ -16,11 +16,13 @@ class Certificate extends Model
     {
         return $this->belongsTo(User::class);
     }
-    public function admin(){
-        return $this->belongsTo(Admin::class);
-    }
     public function vactype()
     {
         return $this->belongsTo(vaccine_type::class,'vaccine_id');
+    }
+
+    
+    public function admin(){
+        return $this->belongsTo(Admin::class);
     }
 }

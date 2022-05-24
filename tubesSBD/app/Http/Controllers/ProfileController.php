@@ -13,7 +13,7 @@ class ProfileController extends Controller
         return view('editProfile');
     }
 
-    public function update(Request $request)
+    public function update(Request $request) //1(c)
     {
         $validate = $request->validate([
             'fname' => 'required|regex:/^[\pL\s\-]+$/u',
@@ -27,8 +27,15 @@ class ProfileController extends Controller
                 
         ]
     );
+        //Memeriksa apakah data yg dimasukkan terdapat dalam table 'data' 
+        //Jika tidak maka profile tidak bs diupdate
 
-        $data=DB::table('data')->where('NIK','=',$validate['NIK'])->first();
+        //Query 
+        /*
+         SELECT * FROM data WHERE (NIK = $validate['NIK'] ) ;
+         SELECT COUNT(*) FROM data WHERE NIK =$validate['NIK];
+        */
+        $data=DB::table('data')->where('NIK','=',$validate['NIK']);
             if(DB::table('data')->where('NIK','=',$validate['NIK'])->count() >0)
             {
                 if($data->fname != $validate['fname'])
@@ -44,7 +51,10 @@ class ProfileController extends Controller
                'fname'=>$validate['fname'],
                'NIK'=>$validate['NIK'] 
             ]);
-    
+            /*
+            UPDATE users SET fname =$validate['fname'],NIK = $validate['NIK] WHERE id = auth()->user()->id;
+            
+            */
 
         return redirect('/editprofile')->with('success', 'Profile has been updated');
     }

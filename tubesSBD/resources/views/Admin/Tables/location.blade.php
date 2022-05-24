@@ -37,6 +37,12 @@
             </tr>
             @endforeach
         </tbody>
+        {{-- 
+            SELECT locations.id,locations.location_name,locations.address,cities.name
+        FROM locations 
+            INNER JOIN cities
+                ON locations.city_id = cities.id;
+                 --}}
     </table>
 
     <!-- Content Row -->

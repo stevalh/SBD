@@ -27,14 +27,21 @@ return new class extends Migration
             
             $table->string('owner_name');
             $table->unsignedBigInteger('owner_NIK');
-
-          
            
-            $table->timestamps();
-          
-          
-           
+            $table->timestamps();   
         });
+        /*
+        CREATE TABLE certificates (
+            id INT AUTO_INCREMENT PRIMARY_KEY,
+            admin_id INT FOREIGN_KEY  REFERENCES admins(id),
+            user_id INT FOREIGN_KEY REFERENCES users(id),
+            vaccine_id INT  FOREIGN_KEY REFERENCES vaccine_types(id),
+
+            owner_name VARCHAR(255) NOT NULL,
+            owner_NIK INT NOT NULL
+        );
+        
+        */
     }
 
     /**

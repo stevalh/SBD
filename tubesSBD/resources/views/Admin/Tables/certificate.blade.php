@@ -29,6 +29,7 @@
             </tr>
         </thead>
         <tbody>
+           
             @foreach ($certificates as $certi)
             <tr>
                 <td>{{ $certi->id }}</td>
@@ -41,6 +42,17 @@
             </tr>
             @endforeach
         </tbody>
+        {{-- SELECT certificates.id,admins.name, certificates.owner_name,certificates.owner_NIK,
+        users.email,vaccine_types.name,certificates.created_at FROM certificates
+        INNER JOIN admins
+             ON certificates.admin_id = admins.id
+        INNER JOIN vaccine_types 
+            ON certificates.vaccine_id = vaccine_types.id
+        INNER JOIN users 
+            ON certificates.user_id = users.id;
+        --}}
+
+
     </table>
     <!-- Content Row -->
     <div class="row">

@@ -17,6 +17,7 @@
                 <?php
                 $i=1;
                 ?>
+                
             @foreach ($user->certificates as $certi)
             
             <div class="col-lg-12">
@@ -33,6 +34,12 @@
                                             Vaccine Type :{{ $certi->vactype->name }} </p>
                                     </div>
                                 </div>
+                                {{-- SELECT certificates.owner_name, certificates.owner_NIK, certificates.created_at, vaccine_types.name
+                                INNER JOIN vaccine_types
+                                     ON certificates.vaccine_id = vaccine_types.id
+                                INNER JOIN users
+                                     ON certificates.user_id =users.id
+                                WHERE certificates.user_id =$user->id; --}}
                                 <div class="col-lg-6 align-self-center">
                                     <div class="right-image">
                                         <img src="assets/images/services-image-5.png" alt="">

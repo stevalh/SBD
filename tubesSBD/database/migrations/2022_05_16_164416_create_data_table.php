@@ -18,6 +18,12 @@ return new class extends Migration
             $table->string('fname');
            
         });
+        /*
+            CREATE TABLE data(
+                NIK INT AUTO_INCREMENT PRIMARY_KEY,
+                fname VARCHAR(255) NOT NULL
+            );
+        */
     }
 
     /**

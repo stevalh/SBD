@@ -24,18 +24,34 @@ class AdminController extends Controller
         $types=DB::table('vaccine_types')->count();
         return view('Admin.index',compact('users','cities','locations','tests','types'));
     }
+
+
+
+
+     
     public function userview()
     {
         $users=User::all();
 
         return view('Admin.Tables.user',compact('users'));
     }
+
+    /*
+    SELECT * FROM users;
+    
+    */
+
+
+
+
+
     public function cityview()
     {
         $cities=City::all();
 
         return view('Admin.Tables.city',compact('cities'));
     }
+    // SELECT *FROM cities;
 
 
 
@@ -47,12 +63,20 @@ class AdminController extends Controller
 
         return view('Admin.Tables.certificate',compact('certificates'));
     }
+    /*
+    SELECT *FROM certificates;
+    */
+
+
     public function testview()
     {
         $tests=Test::all();
 
         return view('Admin.Tables.test',compact('tests'));
     }
+    /*
+    SELECT *FROM tests;
+    */
 
 
 
@@ -68,12 +92,25 @@ class AdminController extends Controller
 
         return view('Admin.Tables.location',compact('locations'));
     }
+     /*
+    SELECT *FROM locations;
+    */
+
+
+
+
+
+
     public function typeview()
     {
         $vaccines=vaccine_type::all();
 
         return view('Admin.Tables.type',compact('vaccines'));
+
+        // SELECT * FROM vaccine_types;
     }
+
+
 
     public function addcityview()
     {
@@ -99,6 +136,10 @@ class AdminController extends Controller
             $city=new City();
             $city->name =$validate['name'];
             $city->save();
+            /*
+            INSERT INTO cities(name)
+                VALUES($validate['name']);
+            */
 
             return redirect('/administrator/city')->with('success','Added new City');
 
@@ -109,6 +150,9 @@ class AdminController extends Controller
         $cities=City::orderBy('name')->get();
         return view('Admin.Tables.addlocation',compact('cities'));
     }
+
+
+    
 
     public function addlocation(Request $request)
     {
@@ -123,6 +167,8 @@ class AdminController extends Controller
             $location->save();
 
             return redirect('/administrator/location')->with('success','Added new location');
+            // INSERT INTO locations(location_name,address,city_id)
+            //      VALUES($data['name'],$data['address'],$data['city']);
 
     }
     public function addtypeview()
@@ -151,6 +197,9 @@ class AdminController extends Controller
             $vaccine->name =$validate['name'];
             $vaccine->save();
 
+            // INSERT INTO vaccine_types(name)
+            //     VALUES($validate['name']);
+
             return redirect('/administrator/type')->with('success','Added new Types of Vaccine');
 
     }
@@ -163,6 +212,9 @@ class AdminController extends Controller
         return view('Admin.Tables.addcerti',compact('vaccines'));
     }
 
+
+
+    
     public function addcerti(Request $request)
     {
       
@@ -182,6 +234,15 @@ class AdminController extends Controller
             ]     
             );
             
+            //Memeriksa apakah data yg dimasukkan terdapat dalam table 'data' 
+        //Jika tidak maka certi tidak bs ditambah
+
+        //Query 
+        /*
+         SELECT * FROM data WHERE NIK = $validate['NIK'];
+         SELECT COUNT(*) FROM data WHERE NIK =$validate['NIK];
+         2c
+        */
             $data=DB::table('data')->where('NIK','=',$validate['NIK'])->first();
             if(DB::table('data')->where('NIK','=',$validate['NIK'])->count() >0)
             {
@@ -206,7 +267,10 @@ class AdminController extends Controller
             $certificates->save();
 
             return redirect('/administrator/certi')->with('success','Certificate has been sent successfully');
-
+            /* 
+                 INSERT INTO certificates(admin_id,owner_name,owner_NIK,user_id,vaccine_id)
+                 VALUES(auth()->user()->id,$validate['name'],$validate['NIK'],$user->id,$validate['vaccine']);
+            */
     }
 
 
@@ -217,9 +281,9 @@ class AdminController extends Controller
         return view('Admin.Tables.addtest');
     }
 
+    //3d
     public function addtest(Request $request)
     {
-      
         $validate= $request->validate(
             [
                 'name'=>'required|regex:/^[\pL\s\-]+$/u',
@@ -235,7 +299,14 @@ class AdminController extends Controller
                 'email.email'=>'Email Format invalid'
             ]     
             );
-            
+            //Memeriksa apakah data yg dimasukkan terdapat dalam table 'data' 
+        //Jika tidak maka tests tidak bs ditambah
+
+        //Query 
+        /*
+         SELECT * FROM data WHERE NIK = $validate['NIK'];
+         SELECT COUNT(*) FROM data WHERE NIK =$validate['NIK];
+        */
             $data=DB::table('data')->where('NIK','=',$validate['NIK'])->first();
             if(DB::table('data')->where('NIK','=',$validate['NIK'])->count() >0)
             {
@@ -259,11 +330,18 @@ class AdminController extends Controller
             $test->result=$validate['result'];
             $test->save();
             
-            
+            /*
+            SELECT * FROM users WHERE email = $validate['email']
+                LIMIT 1;
+
+            INSERT INTO tests(admin_id,patient_name,patient_NIK,patient_id,result)
+                VALUES(auth()->user()->id,$validate['name'],$validate['NIK'],$user->id,$validate['result']);
+
+            */
             return redirect('/administrator/test')->with('success','Test Result has been sent successfully');
 
     }
-
+    //3c
     public function deletetest(Request $request)
     {
         $data=$request->all();
@@ -271,4 +349,5 @@ class AdminController extends Controller
         DB::table('tests')->where('id','=',$data['id'])->delete();
         return redirect('/administrator/test')->with('del','Deleted Successfuly');
     }
+    //DELETE FROM tests WHERE id =$request->id;
 }

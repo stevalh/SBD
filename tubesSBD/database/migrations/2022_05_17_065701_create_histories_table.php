@@ -21,7 +21,18 @@ return new class extends Migration
             $table->boolean('check_out')->default(false);
             
         });
+
+        /*
+            CREATE TABLE histories(
+                id INT AUTO_INCREMENT PRIMARY_KEY, 
+                users_id INT FOREIGN_KEY REFERENCES users(id),
+                locations_id INT FOREIGN_KEY REFERENCES locations(id)
+                check_out boolean DEFAULT false;
+            );
+
+        */
     }
+
 
     /**
      * Reverse the migrations.

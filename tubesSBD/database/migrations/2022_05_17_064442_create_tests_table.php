@@ -27,6 +27,20 @@ return new class extends Migration
             
             $table->timestamps();
         });
+        /*
+         CREATE TABLE tests(
+            id INT AUTO_INCREMENT PRIMARY_KEY,
+            
+            patient_id INT FOREIGN_KEY REFERENCES users(id),
+            admin_id INT FOREIGN_KEY REFERENCES admins(id),
+
+            patient_name VARCHAR(255) NOT NULL,
+            patient_NIK INT NOT NULL,
+            result VARCHAR(255) NOT NULL,
+         );
+         
+         
+         */
     }
 
     /**

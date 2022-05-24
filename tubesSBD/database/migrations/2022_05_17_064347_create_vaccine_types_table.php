@@ -17,6 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
         });
+        // CREATE TABLE vaccine_types (
+
+        //     id INT AUTO_INCREMENT PRIMARY_KEY,
+        //     name VARCHAR(255) NOT NULL
+        // );
     }
 
     /**

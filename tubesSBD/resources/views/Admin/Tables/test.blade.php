@@ -37,6 +37,7 @@
             </tr>
         </thead>
         <tbody>
+            
             @foreach ($tests as $test)
             <tr>
                 <td>{{ $test->id }}</td>
@@ -58,6 +59,11 @@
                 </td>
             </tr>
             @endforeach
+            {{-- SELECT tests.id, admins.name,tests.patient_name,tests.patient_NIK,users.email,tests.result,tests.created_at FROM tests
+                INNER JOIN admins
+                    ON tests.admin_id = admins.id
+                INNER JOIN users
+                    ON tests.user_id = users.id; --}}
         </tbody>
     </table>
 
