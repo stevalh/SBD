@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <img src="assets/images/logo-v1.png" alt="">
-                    <h1>TraceTogether, safer together</h1>
+                    <h1>Tracer, safer together</h1>
                     <h4>Join over 90% of people in Singapore</h4>
                     <h4>In stopping the spread of COVID-19 community-driven contact tracing</h4>
                     <div class="first-button scroll-to-section">
