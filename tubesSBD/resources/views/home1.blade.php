@@ -20,7 +20,7 @@
                                     @else
                                     <h6>Hi</h6>
                                     @endauth
-                                    <h2>TraceTogether, safer together</h2>
+                                    <h2>Tracer, safer together</h2>
                                     <p>Join over 90% of people in Singapore in stopping the spread of COVID-19 through
                                         community-driven contact tracing</p>
                                 </div>

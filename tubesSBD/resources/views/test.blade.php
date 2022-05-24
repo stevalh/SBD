@@ -20,15 +20,11 @@
                         <div>
                             <div class="row">
                                 @if($test)
-<<<<<<< HEAD
-
-=======
                                 {{-- @auth
                                     <h6>Hi, {{ auth()->user()->fname }}</h6>
                                     @else
                                     <h6>Hi</h6>
                                     @endauth --}}
->>>>>>> e6d2cde6ea34aef455663883f37f786dc8b55075
                                 <div class="col-lg-6 align-self-center">
                                     <div class="left-text">
                                             <h4 style="margin-bottom: 10px">Result Test Covid-19 </h4>
