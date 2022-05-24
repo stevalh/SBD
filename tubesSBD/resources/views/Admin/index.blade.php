@@ -16,13 +16,6 @@
                         <p class="card-text" style="font-size:">{{ $users }}</p>
                     </div>
                 </div>
-                <div class="card border-dark mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Test</div>
-                    <div class="card-body text-dark">
-                        <h5 class="card-title">Total Tests</h5>
-                        <p class="card-text">{{ $tests }}</p>
-                    </div>
-                </div>
             </div>
             <div class="col-lg-4">
                 <div class="card border-dark mb-3" style="max-width: 18rem;">
@@ -42,15 +35,26 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-2 mt-3"></div>
+            <div class="col-lg-4 mt-3">
                 <div class="card border-dark mb-3" style="max-width: 18rem;">
-                    <div class="card-header">City</div>
+                    <div class="card-header">Test</div>
+                    <div class="card-body text-dark">
+                        <h5 class="card-title">Total Tests</h5>
+                        <p class="card-text">{{ $tests }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-3">
+                <div class="card border-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Types of Vaccine</div>
                     <div class="card-body text-dark">
                         <h5 class="card-title">Total Types of Vaccine</h5>
                         <p class="card-text">{{ $types }}</p>
                     </div>
                 </div>
             </div>
+            <div class="col-lg-2 mt-3"></div>
         </div>
     </div>
     <!-- Content Row -->

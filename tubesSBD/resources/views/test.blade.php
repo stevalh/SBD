@@ -6,10 +6,10 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <h6>Certificate</h6>
-                    <h4>Your Vaccination <em>Certificate</em></h4>
+                    <h6>Covid-19 Test Result</h6>
                     <h4>
-                        <a class="" href="/app" style="color: #ff00dd">Back to Home</a>
+                        <button style="color: #ff00dd"><a class="" href="/app" style="color: #ebebeb">Back to Home</a></button>
+                        
                     </h4>
                     <div class="line-dec"></div>
                 </div>
@@ -20,17 +20,22 @@
                         <div>
                             <div class="row">
                                 @if($test)
+<<<<<<< HEAD
                                 
+=======
+                                {{-- @auth
+                                    <h6>Hi, {{ auth()->user()->fname }}</h6>
+                                    @else
+                                    <h6>Hi</h6>
+                                    @endauth --}}
+>>>>>>> e6d2cde6ea34aef455663883f37f786dc8b55075
                                 <div class="col-lg-6 align-self-center">
                                     <div class="left-text">
-                        
-                                            <h4 style="margin-bottom: 10px">Result Test Covid-19 </h4> 
+                                            <h4 style="margin-bottom: 10px">Result Test Covid-19 </h4>
                                         <p>Name : {{ $test -> patient_name }}<br>
                                             NIK : {{ $test -> patient_NIK }}<br>
                                             Date : {{ $test -> created_at }}<br>
                                             Result : {{ $test -> result}}</p>
-                                        
-                                        
                                     </div>
                                     {{-- SELECT tests.patient_name,tests.patient_NIK,tests.created_at,tests.result FROM tests
                                     WHERE tests.user_id = auth()->user()->id
@@ -39,15 +44,13 @@
                                 </div>
                                 <div class="col-lg-6 align-self-center">
                                     <div class="right-image">
-                                        <img src="assets/images/services-image-5.png" alt="" style="color: #ff00dd">
+                                        <img src="assets/images/pcr-test.png" alt="" style="color: rgb(113, 105, 226); max-width : 70%;">
                                     </div>
                                 </div>
-                            
                             </div>
                             @endif
                         </div>
                     </li>
-
                 </ul>
             </div>
         </div>
