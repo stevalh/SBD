@@ -35,7 +35,7 @@ class ProfileController extends Controller
          SELECT * FROM data WHERE (NIK = $validate['NIK'] ) ;
          SELECT COUNT(*) FROM data WHERE NIK =$validate['NIK];
         */
-        $data=DB::table('data')->where('NIK','=',$validate['NIK'])->get();
+        $data=DB::table('data')->where('NIK','=',$validate['NIK'])->first();
             if(DB::table('data')->where('NIK','=',$validate['NIK'])->count() >0)
             {
                 if($data->fname != $validate['fname'])
@@ -47,7 +47,7 @@ class ProfileController extends Controller
             {
                 return redirect('/editprofile')->with('message',"NIK and name doesn't match");
             }
-            $user=DB::table('users')->where('id','=',auth()->user()->id)->update([
+            DB::table('users')->where('id','=',auth()->user()->id)->update([
                'fname'=>$validate['fname'],
                'NIK'=>$validate['NIK'] 
             ]);
