@@ -15,7 +15,7 @@ class QRController extends Controller
         //Check
 
         $user=User::findorFail(auth()->user()->id);
-        if($user->NIK =null)
+        if($user->NIK ==null)
         {
             return redirect('/app')->with('fail',"Complete Your Profile first");
         }
