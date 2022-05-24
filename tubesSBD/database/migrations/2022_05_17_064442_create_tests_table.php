@@ -24,6 +24,7 @@ return new class extends Migration
             
             $table->string('patient_name');
             $table->unsignedBigInteger('patient_NIK');
+            $table->foreign('patient_NIK')->references('NIK')->on('data')->onDelete('restrict');
             
             $table->timestamps();
         });
@@ -33,6 +34,7 @@ return new class extends Migration
             
             patient_id INT FOREIGN_KEY REFERENCES users(id),
             admin_id INT FOREIGN_KEY REFERENCES admins(id),
+            patient_NIK INT FOREIGN_KEY REFERENCES data(NIK),
 
             patient_name VARCHAR(255) NOT NULL,
             patient_NIK INT NOT NULL,

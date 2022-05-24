@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('fname');
             $table->string('email')->unique();
             $table->unsignedBigInteger('NIK')->nullable();
+            $table->foreign('NIK')->references('NIK')->on('data')->onDelete('restrict');
             $table->string('token')->nullable();
             $table->timestamps();
         
@@ -28,7 +29,7 @@ return new class extends Migration
         id INT AUTO_INCREMENT PRIMARY_KEY,
         fname VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
-        NIK INT ,
+        NIK INT FOREIGN_KEY REFERENCES data(NIK),
         token VARCHAR(255)
     );
     

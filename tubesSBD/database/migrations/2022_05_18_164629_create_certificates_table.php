@@ -27,7 +27,7 @@ return new class extends Migration
             
             $table->string('owner_name');
             $table->unsignedBigInteger('owner_NIK');
-           
+            $table->foreign('owner_NIK')->references('NIK')->on('data')->onDelete('restrict');
             $table->timestamps();   
         });
         /*
@@ -35,6 +35,7 @@ return new class extends Migration
             id INT AUTO_INCREMENT PRIMARY_KEY,
             admin_id INT FOREIGN_KEY  REFERENCES admins(id),
             user_id INT FOREIGN_KEY REFERENCES users(id),
+            owner_NIK INT FOREIGN_KEY REFERENCES data(NIK),
             vaccine_id INT  FOREIGN_KEY REFERENCES vaccine_types(id),
 
             owner_name VARCHAR(255) NOT NULL,
