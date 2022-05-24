@@ -9,19 +9,19 @@
                     <h6>Covid-19 Test Result</h6>
                     <h4>
                         <button style="color: #ff00dd"><a class="" href="/app" style="color: #ebebeb">Back to Home</a></button>
-                        
+
                     </h4>
                     <div class="line-dec"></div>
                 </div>
             </div>
             <div class="col-lg-12">
-                <ul class="nacc">
+                <ul>
                     <li class="active">
                         <div>
                             <div class="row">
                                 @if($test)
 <<<<<<< HEAD
-                                
+
 =======
                                 {{-- @auth
                                     <h6>Hi, {{ auth()->user()->fname }}</h6>
