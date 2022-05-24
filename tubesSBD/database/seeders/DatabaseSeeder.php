@@ -6,6 +6,8 @@ use App\Models\City;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Location;
+use App\Models\User;
+use App\Models\vaccine_type;
 use App\Models\Data;
 
 class DatabaseSeeder extends Seeder
@@ -22,6 +24,37 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AdminSeeder::class,
         ]);
+
+        vaccine_type::create([
+
+            'name'=>'Moderna'
+        ]);
+
+        vaccine_type::create([
+            'name'=>'Sinovac'
+        ]);
+
+        User::create([
+            'fname'=>"Kenzie",
+            'email'=>"kenziefubrianto@gmail.com"
+        ]);
+        User::create([
+            'fname'=>"Steven",
+            'email'=>"huangwieyang@gmail.com"
+        ]);
+        User::create([
+            'fname'=>"Erick",
+            'email'=>"erickuniv@gmail.com"
+        ]);
+        User::create([
+            'fname'=>"Andre",
+            'email'=>"elizgozali@gmail.com"
+        ]);
+        User::create([
+            'fname'=>"Ariyo",
+            'email'=>"m45syahraza@gmail.com"
+        ]);
+
 
         City::create([
             'name'=>'Medan',
@@ -116,6 +149,8 @@ class DatabaseSeeder extends Seeder
             'NIK'=>10000005,
             'fname'=>"Erick Lorus"
         ]);
+
+
         
     }
 }
