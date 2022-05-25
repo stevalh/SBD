@@ -40,10 +40,9 @@ class CheckInOut extends Controller
         //dan users adalah many to many
         $data=Location::with('users')->get()->find($location_id);
         return view('Qrcode.success',compact('data'));
-        /*
-            SELECT * FROM locations WHERE id = $location_id;
-            SELECT * FROM users;
-        */
+        // "SELECT users.*, histories.users_id, histories.locations_id, histories.created_at, histories.updated_at, histories.check_out  FROM locations 
+        //INNER JOIN histories
+        // ON users.id = histories.users_id where histories.locations_id in ($location_id);
     }
 
     public function checkout($location_id)
@@ -53,9 +52,10 @@ class CheckInOut extends Controller
             //SESUAI dengan pivot table yang dibentuk(histories) dimana relasi antara locations
             //dan users adalah many to many
             $data=Location::with('users')->get()->find($location_id);
-            /*
-          
-        */
+            
+            // "SELECT users.*, histories.users_id, histories.locations_id, histories.created_at, histories.updated_at, histories.check_out  FROM locations 
+            //INNER JOIN histories
+            // ON users.id = histories.users_id where histories.locations_id in ($location_id);
             session()->forget('location');
             foreach($data->users as $user)
             {

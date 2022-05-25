@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Certificate;
 use App\Models\City;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -9,6 +10,7 @@ use App\Models\Location;
 use App\Models\User;
 use App\Models\vaccine_type;
 use App\Models\Data;
+use App\Models\Test;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,6 +27,59 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
         ]);
 
+        Data::create([
+            'NIK'=>10000001,
+            'fname'=>"Kenzie Fubrianto"
+        ]);
+        Data::create([
+            'NIK'=>10000002,
+            'fname'=>"Ariyo Syahraza"
+        ]);
+        Data::create([
+            'NIK'=>10000003,
+            'fname'=>"Steven Valentino"
+        ]);
+        Data::create([
+            'NIK'=>10000004,
+            'fname'=>"Andre Gozali"
+        ]);
+        Data::create([
+            'NIK'=>10000005,
+            'fname'=>"Erick Lorus"
+        ]);
+        Data::create([
+            'NIK'=>10000006,
+            'fname'=>"Lucas"
+        ]);
+        
+        
+        
+        User::create([
+            'fname'=>"Kenzie Fubrianto",
+            'email'=>"kenziefubrianto@gmail.com",
+            'NIK'=>10000001
+        ]);
+        User::create([
+            'fname'=>"Steven Valentino",
+            'email'=>"huangwieyang@gmail.com",
+            'NIK'=>10000003
+        ]);
+        User::create([
+            'fname'=>"Erick Lorus",
+            'email'=>"erickuniv@gmail.com",
+            'NIK'=>10000005
+        ]);
+        User::create([
+            'fname'=>"Andre Gozali",
+            'email'=>"elizgozali@gmail.com",
+            'NIK'=>10000004
+        ]);
+        User::create([
+            'fname'=>"Ariyo Syahraza",
+            'email'=>"m45syahraza@gmail.com",
+            'NIK'=>10000002
+        ]);
+
         vaccine_type::create([
 
             'name'=>'Moderna'
@@ -34,28 +89,9 @@ class DatabaseSeeder extends Seeder
             'name'=>'Sinovac'
         ]);
 
-        User::create([
-            'fname'=>"Kenzie",
-            'email'=>"kenziefubrianto@gmail.com"
-        ]);
-        User::create([
-            'fname'=>"Steven",
-            'email'=>"huangwieyang@gmail.com"
-        ]);
-        User::create([
-            'fname'=>"Erick",
-            'email'=>"erickuniv@gmail.com"
-        ]);
-        User::create([
-            'fname'=>"Andre",
-            'email'=>"elizgozali@gmail.com"
-        ]);
-        User::create([
-            'fname'=>"Ariyo",
-            'email'=>"m45syahraza@gmail.com"
-        ]);
-
-
+        
+        
+        
         City::create([
             'name'=>'Medan',
             
@@ -72,8 +108,8 @@ class DatabaseSeeder extends Seeder
 
 
         //Location
-
-
+        
+        
         Location::create([
             'location_name'=>'Thamrin Plaza',
             'address'=>'Jl.M.H Thamrin',
@@ -84,7 +120,7 @@ class DatabaseSeeder extends Seeder
             'location_name'=>'Texas Chicken',
             'address'=>'Jl.Putri Merak Jingga',
             'city_id'=>1,
-           
+            
         ]);
         Location::create([
             'location_name'=>'Sun Plaza',
@@ -96,7 +132,7 @@ class DatabaseSeeder extends Seeder
             'location_name'=>'Nelayan',
             'address'=>'Jl.apel',
             'city_id'=>2,
-           
+            
         ]);
         Location::create([
             'location_name'=>'Sushi',
@@ -120,7 +156,7 @@ class DatabaseSeeder extends Seeder
             'location_name'=>'Yuki Mart',
             'address'=>'Jl.Maret',
             'city_id'=>3,
-          
+            
         ]);
         Location::create([
             'location_name'=>'Brastagi Supermarket',
@@ -128,29 +164,32 @@ class DatabaseSeeder extends Seeder
             'city_id'=>3,
            
         ]);
-
-        Data::create([
-            'NIK'=>10000001,
-            'fname'=>"Kenzie Fubrianto"
+        Certificate::create([
+            'admin_id'=>1,
+            'user_id'=>1,
+            'vaccine_id'=>2,
+            'owner_NIK'=>10000001,
+            'owner_name'=>'Kenzie Fubrianto'
         ]);
-        Data::create([
-            'NIK'=>10000002,
-            'fname'=>"Ariyo Syahraza"
+        Certificate::create([
+            'admin_id'=>1,
+            'user_id'=>1,
+            'vaccine_id'=>2,
+            'owner_NIK'=>10000001,
+            'owner_name'=>'Kenzie Fubrianto'
         ]);
-        Data::create([
-            'NIK'=>10000003,
-            'fname'=>"Steven Valentino"
+        
+        Test::create([
+            'admin_id'=>1,
+            'patient_id'=>1,
+            'result'=>'positive',
+            'patient_NIK'=>10000001,
+            'patient_name'=>'Kenzie Fubrianto'
         ]);
-        Data::create([
-            'NIK'=>10000004,
-            'fname'=>"Andre Gozali"
-        ]);
-        Data::create([
-            'NIK'=>10000005,
-            'fname'=>"Erick Lorus"
-        ]);
-
-
+        
+        
         
     }
+
+
 }

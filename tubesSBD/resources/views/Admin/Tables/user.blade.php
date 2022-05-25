@@ -14,7 +14,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">NIK</th>
                 <th scope="col">Email</th>
-                <th scope="col">Status</th>
+            
             </tr>
         </thead>
         <tbody>
@@ -24,7 +24,7 @@
                 <td>{{ $user->fname }}</td>
                 <td>{{ $user->NIK }}</td>
                 <td>{{ $user->email }}</td>
-                <td>{{ $user->status }}</td>
+               
             </tr>
             @endforeach
         </tbody>

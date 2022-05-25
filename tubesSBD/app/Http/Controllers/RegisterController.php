@@ -39,7 +39,7 @@ class RegisterController extends Controller
         User::create($validatedData);
         /*
         INSERT INTO users(fname,email)
-        VALUES(fname,email);
+        VALUES($validatedData['fname'],$validatedData['email']);
         */
         
         return redirect('/')->with('success', 'Registration successfull ! Please Login'); 
