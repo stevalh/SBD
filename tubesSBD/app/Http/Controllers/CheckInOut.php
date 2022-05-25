@@ -40,7 +40,7 @@ class CheckInOut extends Controller
         //dan users adalah many to many
         $data=Location::with('users')->get()->find($location_id);
         return view('Qrcode.success',compact('data'));
-        // "SELECT users.*, histories.users_id, histories.locations_id, histories.created_at, histories.updated_at, histories.check_out  FROM locations 
+        // "SELECT users.*, histories.users_id, histories.locations_id, histories.created_at, histories.updated_at, histories.check_out  FROM users 
         //INNER JOIN histories
         // ON users.id = histories.users_id where histories.locations_id in ($location_id);
     }
@@ -53,14 +53,14 @@ class CheckInOut extends Controller
             //dan users adalah many to many
             $data=Location::with('users')->get()->find($location_id);
             
-            // "SELECT users.*, histories.users_id, histories.locations_id, histories.created_at, histories.updated_at, histories.check_out  FROM locations 
+            // "SELECT users.*, histories.users_id, histories.locations_id, histories.created_at, histories.updated_at, histories.check_out  FROM users 
             //INNER JOIN histories
             // ON users.id = histories.users_id where histories.locations_id in ($location_id);
             session()->forget('location');
             foreach($data->users as $user)
             {
                 
-                if($user->fname == auth()->user()->fname && $user->pivot->check_out == false)
+                if($user->id == auth()->user()->id && $user->pivot->check_out == false)
                 {
                    DB::table('histories')->where('locations_id','=',$data->id)->where('users_id','=',$user->id)->update(['check_out'=>true]);
                    /*
